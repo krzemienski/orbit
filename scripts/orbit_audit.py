@@ -227,11 +227,32 @@ def source_ref(event: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+_NOISE_MARKERS = (
+    "<local-command-stdout>", "<local-command-caveat>", "<local-command-",
+    "<command-message>", "<command-name>", "<command-args>",
+    "<system-reminder>", "<task-notification>", "<tool_use_error>",
+    "tool_use_id", "tool_result",
+    "PreToolUse hook", "PostToolUse hook", "UserPromptSubmit hook",
+    "Async hook", "Caveat: The messages below were generated",
+)
+
+
+def _is_noise_text(text: str) -> bool:
+    """Filter envelopes / hook output / tool-result blobs that are not durable user instructions."""
+    sample = text[:400].lower()
+    return any(marker.lower() in sample for marker in _NOISE_MARKERS)
+
+
 def extract_intents(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     for event in events:
         text = event.get("content_text", "")
         if event.get("role") != "user" or not text:
+            continue
+        if _is_noise_text(text):
+            continue
+        src = event.get("source_file", "")
+        if ".claude/audits/latest" in src or ".claude/audits/intent-ledger" in src:
             continue
         matched = matches_any(text, INTENT_PATTERNS)
         if not matched and len(text) < 60:
@@ -348,11 +369,15 @@ def validate_codebase(project: Path, claims: list[dict[str, Any]]) -> list[dict[
             "id": f"validation_{len(results)+1:04d}",
             "target_type": "artifact",
             "target_id": rel,
-            "check": "artifact_exists",
+            "check": "previous_run_artifact_exists",
             "path": rel,
-            "status": "passed" if exists else "failed",
-            "evidence": "Artifact exists." if exists else "Artifact not found in current repository.",
-            "severity": "low" if exists else "medium",
+            "status": "passed" if exists else "unverified",
+            "evidence": (
+                "Previous-run artifact exists." if exists
+                else "No previous-run artifact at this path. Expected on first audit in a fresh repo; "
+                     "the current run writes this artifact AFTER validation, so check again next run."
+            ),
+            "severity": "low",
         })
     path_re = re.compile(r"([\w./-]+\.(?:py|md|json|html|js|ts|tsx|jsx|css|yml|yaml|sh))")
     for claim in claims:

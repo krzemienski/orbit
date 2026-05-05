@@ -1,7 +1,7 @@
 {
   "name": "orbit",
   "description": "Mines local Claude Code session transcripts, written plans, instruction ledgers, tool evidence, and codebase state to compare user intent against planned, claimed, executed, and validated work.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "skills": "./skills",
   "commands": "./commands",
   "hooks": "./hooks/hooks.json"
