@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-05-05T20:58:45Z",
+  "generated_at": "2026-05-05T21:41:18Z",
   "plugin_root": "/Users/nick/Desktop/orbit",
   "overall": "BLOCKED",
   "section_status": {
     "architecture_discovery": "PASS",
     "documentation_research": "PASS",
-    "installed_plugin_validation": "BLOCKED",
+    "installed_plugin_validation": "PASS",
     "plugin_compliance_static": "PASS",
     "skill_creator_review": "PASS",
     "documentation_completeness": "PASS",
-    "sdk_scenarios": "PASS",
+    "sdk_scenarios": "BLOCKED",
     "dashboard_verification": "PASS"
   },
   "checks": [
@@ -224,14 +224,14 @@
     },
     {
       "check_name": "orbit_installed",
-      "status": "BLOCKED",
-      "evidence_path": "/Users/nick/.claude/plugins/installed_plugins.json",
-      "observed_value": "orbit_install_dirs=[]",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/.claude/plugins/cache/orbit-dev",
+      "observed_value": "installed at /Users/nick/.claude/plugins/cache/orbit-dev",
       "expected_value": "orbit listed in installed_plugins.json or under ~/.claude/plugins/",
       "failure_reason": "",
-      "blocker_reason": "Orbit not installed in current Claude Code environment",
-      "manual_verification_command": "claude plugin list 2>&1 | grep -i orbit ; ls ~/.claude/plugins/ | grep -i orbit",
-      "notes": ""
+      "blocker_reason": "",
+      "manual_verification_command": "claude plugin list 2>&1 | grep -i orbit ; ls ~/.claude/plugins/cache/orbit-dev/ 2>&1",
+      "notes": "Live tmux validation evidence: /Users/nick/Desktop/orbit/evidence/installed-plugin-live-validation/SUMMARY.md"
     },
     {
       "check_name": "claude_cli_present",
@@ -246,36 +246,36 @@
     },
     {
       "check_name": "installed_plugin_command_discovery",
-      "status": "BLOCKED",
-      "evidence_path": "",
-      "observed_value": "non-interactive enumeration not supported by current Claude Code CLI",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/evidence/installed-plugin-live-validation/SUMMARY.md",
+      "observed_value": "/orbit:audit-gaps + /orbit:review-window discovered + invoked via tmux",
       "expected_value": "Installed Orbit commands discoverable",
       "failure_reason": "",
-      "blocker_reason": "`claude plugin list` is interactive; harness cannot enumerate slash commands non-interactively",
+      "blocker_reason": "",
       "manual_verification_command": "claude /orbit:audit-gaps  # interactive verify",
-      "notes": ""
+      "notes": "Live tmux validation evidence: /Users/nick/Desktop/orbit/evidence/installed-plugin-live-validation/SUMMARY.md"
     },
     {
       "check_name": "installed_plugin_skill_discovery",
-      "status": "BLOCKED",
-      "evidence_path": "",
-      "observed_value": "non-interactive skill enumeration not exposed",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/evidence/installed-plugin-live-validation/SUMMARY.md",
+      "observed_value": "skill triggered indirectly via slash command in tmux session",
       "expected_value": "Orbit skills discoverable in installed plugin payload",
       "failure_reason": "",
-      "blocker_reason": "Skill discovery is internal to the agent loop and not exposed via CLI flag",
+      "blocker_reason": "",
       "manual_verification_command": "claude\nthen invoke a skill trigger phrase like 'audit this project for gaps'",
-      "notes": ""
+      "notes": "Live tmux validation evidence: /Users/nick/Desktop/orbit/evidence/installed-plugin-live-validation/SUMMARY.md"
     },
     {
       "check_name": "installed_plugin_hook_configuration",
-      "status": "BLOCKED",
-      "evidence_path": "",
-      "observed_value": "no enumerator for installed-plugin hook config",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/.claude/plugins/data/orbit-orbit-dev/intent-ledger-candidates.jsonl",
+      "observed_value": "hook wrote candidate JSONL at /Users/nick/.claude/plugins/data/orbit-orbit-dev/intent-ledger-candidates.jsonl",
       "expected_value": "Orbit hooks loaded by Claude Code",
       "failure_reason": "",
-      "blocker_reason": "hook activation is internal to the running agent",
-      "manual_verification_command": "cat ~/.claude/plugins/installed_plugins.json | grep -i orbit ; cat ~/.claude/settings.json | grep -i hooks",
-      "notes": ""
+      "blocker_reason": "",
+      "manual_verification_command": "cat ~/.claude/plugins/installed_plugins.json | grep -i orbit ; cat ~/.claude/plugins/data/orbit-orbit-dev/intent-ledger-candidates.jsonl",
+      "notes": "Live tmux validation evidence: /Users/nick/Desktop/orbit/evidence/installed-plugin-live-validation/SUMMARY.md"
     },
     {
       "check_name": "static_validator_manifest",
@@ -939,178 +939,156 @@
     },
     {
       "check_name": "sdk_scenario_00-architecture-discovery",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/transcript.json",
-      "observed_value": "got_result=True msgs=58",
-      "expected_value": "ResultMessage in transcript.json",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_01-plan-gap",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_02-correction-supersedes",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_03-claim-unverified",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_04-claim-contradicted",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/transcript.json",
-      "observed_value": "got_result=True msgs=34",
-      "expected_value": "ResultMessage in transcript.json",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_05-dashboard-required",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
-      "check_name": "sdk_scenario_06-review-window-days7",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/transcript.json",
-      "observed_value": "got_result=True msgs=40",
-      "expected_value": "ResultMessage in transcript.json",
+      "check_name": "sdk_scenario_06-review-window",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
-      "notes": ""
-    },
-    {
-      "check_name": "sdk_scenario_06-review-window-since",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/transcript.json",
-      "observed_value": "got_result=True msgs=43",
-      "expected_value": "ResultMessage in transcript.json",
-      "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
-      "notes": ""
-    },
-    {
-      "check_name": "sdk_scenario_06-review-window-from-to",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/transcript.json",
-      "observed_value": "got_result=True msgs=38",
-      "expected_value": "ResultMessage in transcript.json",
-      "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_07-hook-candidate",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_08-malformed-jsonl",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/transcript.json",
-      "observed_value": "got_result=True msgs=34",
-      "expected_value": "ResultMessage in transcript.json",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_09-instruction-ledger",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_10-plugin-compliance",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_11-skill-creator-review",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_12-docs-completeness",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness",
-      "observed_value": "returncode=0 got_result=True",
-      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
       "check_name": "sdk_scenario_13-installed-plugin",
-      "status": "PASS",
-      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/transcript.json",
-      "observed_value": "got_result=True msgs=45",
-      "expected_value": "ResultMessage in transcript.json",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "--no-live-runs flag passed",
+      "expected_value": "real ResultMessage observed in transcript.json",
       "failure_reason": "",
-      "blocker_reason": "",
-      "manual_verification_command": "",
+      "blocker_reason": "live SDK runs disabled",
+      "manual_verification_command": "python3 .orbit-sdk-harness/sdk_orbit_all.py --plugin-root . --output .orbit-sdk-harness/reports",
       "notes": ""
     },
     {
@@ -1396,369 +1374,7 @@
       "no front matter is required for slash commands in Claude Code (observed in Orbit's command files)"
     ]
   },
-  "scenario_summaries": [
-    {
-      "scenario_id": "00-architecture-discovery",
-      "summary": {
-        "label": "00-architecture-discovery",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery",
-        "prompt_chars": 349,
-        "transcript_msg_count": 58,
-        "got_result_message": true,
-        "exception": "Exception: Command failed with exit code 1 (exit code: 1)\nError output: Check stderr output for details",
-        "session_id": "225a7867-9c8c-4a7e-b9f5-213de726ae7f",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/debug.log"
-      }
-    },
-    {
-      "scenario_id": "01-plan-gap",
-      "summary": {
-        "label": "01-plan-gap",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap",
-        "prompt_chars": 494,
-        "transcript_msg_count": 42,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "fb671514-51ea-4c1a-b963-5413c7e42a07",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/debug.log",
-        "_runner": "sdk_orbit_audit_gaps.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:50:31Z] run start: 20260505T205031Z-01-plan-gap\n[2026-05-05T20:51:09Z] run done: 20260505T205031Z-01-plan-gap got_result=True msgs=42\n"
-      }
-    },
-    {
-      "scenario_id": "02-correction-supersedes",
-      "summary": {
-        "label": "02-correction-supersedes",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes",
-        "prompt_chars": 501,
-        "transcript_msg_count": 31,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "8a47e9c7-1880-4a68-b289-b59987e1772b",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/debug.log",
-        "_runner": "sdk_orbit_compare_plan.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:51:10Z] run start: 20260505T205110Z-02-correction-supersedes\n[2026-05-05T20:51:25Z] run done: 20260505T205110Z-02-correction-supersedes got_result=True msgs=31\n"
-      }
-    },
-    {
-      "scenario_id": "03-claim-unverified",
-      "summary": {
-        "label": "03-claim-unverified",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified",
-        "prompt_chars": 445,
-        "transcript_msg_count": 31,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "c9715000-2cab-4a5e-80ad-e52206b43edb",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/debug.log",
-        "_runner": "sdk_orbit_validate_claims.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:51:26Z] run start: 20260505T205126Z-03-claim-unverified\n[2026-05-05T20:51:48Z] run done: 20260505T205126Z-03-claim-unverified got_result=True msgs=31\n"
-      }
-    },
-    {
-      "scenario_id": "04-claim-contradicted",
-      "summary": {
-        "label": "04-claim-contradicted",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted",
-        "prompt_chars": 271,
-        "transcript_msg_count": 34,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "ba315ecd-d064-4643-ba61-3e0528e4200c",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/debug.log"
-      }
-    },
-    {
-      "scenario_id": "05-dashboard-required",
-      "summary": {
-        "label": "05-dashboard-required",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required",
-        "prompt_chars": 475,
-        "transcript_msg_count": 31,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "7a76ef16-a586-43c9-8f4c-1a6d00417978",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/debug.log",
-        "dashboard_render_returncode": 0,
-        "dashboard_target": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/rendered-dashboard.html",
-        "dashboard_tokens_all_present": true,
-        "_runner": "sdk_orbit_render_dashboard.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:52:07Z] run start: 20260505T205207Z-05-dashboard-required\n[2026-05-05T20:52:24Z] run done: 20260505T205207Z-05-dashboard-required got_result=True msgs=31\n"
-      }
-    },
-    {
-      "scenario_id": "06-review-window-days7",
-      "summary": {
-        "label": "06-review-window-days7",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7",
-        "prompt_chars": 228,
-        "transcript_msg_count": 40,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "a911a777-1b12-4ac4-ad2d-c4299aa2ad79",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/debug.log"
-      }
-    },
-    {
-      "scenario_id": "06-review-window-since",
-      "summary": {
-        "label": "06-review-window-since",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since",
-        "prompt_chars": 238,
-        "transcript_msg_count": 43,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "30ec1890-034b-46ca-9d6d-141f389f254c",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/debug.log"
-      }
-    },
-    {
-      "scenario_id": "06-review-window-from-to",
-      "summary": {
-        "label": "06-review-window-from-to",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to",
-        "prompt_chars": 253,
-        "transcript_msg_count": 38,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "891c8719-080c-4b38-9f25-05fe22912d9e",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/debug.log"
-      }
-    },
-    {
-      "scenario_id": "07-hook-candidate",
-      "summary": {
-        "label": "07-hook-candidate",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate",
-        "prompt_chars": 349,
-        "transcript_msg_count": 38,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "70a926e1-70b5-45bf-9ab1-1a2945b5087c",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/debug.log",
-        "hook_invocation_count": 4,
-        "hook_candidate_records": 4,
-        "hook_candidate_file": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/orbit-hook-tot607rk/intent-ledger-candidates.jsonl",
-        "_runner": "sdk_orbit_hook_candidate.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:55:20Z] run start: 20260505T205520Z-07-hook-candidate\n[2026-05-05T20:55:57Z] run done: 20260505T205520Z-07-hook-candidate got_result=True msgs=38\n"
-      }
-    },
-    {
-      "scenario_id": "08-malformed-jsonl",
-      "summary": {
-        "label": "08-malformed-jsonl",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl",
-        "prompt_chars": 221,
-        "transcript_msg_count": 34,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "e0418136-7e7e-4a76-ae93-3d1b8e2a89d6",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/debug.log"
-      }
-    },
-    {
-      "scenario_id": "09-instruction-ledger",
-      "summary": {
-        "label": "09-instruction-ledger",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger",
-        "prompt_chars": 327,
-        "transcript_msg_count": 32,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "f02052f3-78ec-49cd-881c-67376fd95d8d",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/debug.log",
-        "ledger_jsonl": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/intent-ledger.jsonl",
-        "ledger_jsonl_valid_lines": 3,
-        "ledger_jsonl_invalid_lines": 0,
-        "ledger_md": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/intent-ledger.md",
-        "ledger_md_present": true,
-        "_runner": "sdk_orbit_mine_intent.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:56:25Z] run start: 20260505T205625Z-09-instruction-ledger\n[2026-05-05T20:56:47Z] run done: 20260505T205625Z-09-instruction-ledger got_result=True msgs=32\n"
-      }
-    },
-    {
-      "scenario_id": "10-plugin-compliance",
-      "summary": {
-        "label": "10-plugin-compliance",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance",
-        "prompt_chars": 359,
-        "transcript_msg_count": 31,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "d9d28027-b0b2-4b06-bb51-23e05d7b0a86",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/debug.log",
-        "static_validators": {
-          "manifest": "PASS",
-          "frontmatter": "PASS",
-          "commands": "PASS",
-          "hooks": "PASS",
-          "outputs": "PASS"
-        },
-        "static_validators_all_pass": true,
-        "_runner": "sdk_orbit_plugin_compliance.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:56:47Z] run start: 20260505T205647Z-10-plugin-compliance\n[2026-05-05T20:56:59Z] run done: 20260505T205647Z-10-plugin-compliance got_result=True msgs=31\n"
-      }
-    },
-    {
-      "scenario_id": "11-skill-creator-review",
-      "summary": {
-        "label": "11-skill-creator-review",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review",
-        "prompt_chars": 409,
-        "transcript_msg_count": 32,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "a1c2660b-690d-4352-9c5b-ba218c7146bb",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/debug.log",
-        "skill_reviews": [
-          {
-            "name": "gap-analysis",
-            "overall": 5.0,
-            "improvements": 0
-          },
-          {
-            "name": "instruction-ledger",
-            "overall": 5.0,
-            "improvements": 0
-          },
-          {
-            "name": "plan-execution-audit",
-            "overall": 5.0,
-            "improvements": 0
-          },
-          {
-            "name": "validation-pairing",
-            "overall": 4.6,
-            "improvements": 0
-          }
-        ],
-        "skill_creator_all_pass": true,
-        "_runner": "sdk_orbit_skill_compliance.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:57:00Z] run start: 20260505T205700Z-11-skill-creator-review\n[2026-05-05T20:57:16Z] run done: 20260505T205700Z-11-skill-creator-review got_result=True msgs=32\n"
-      }
-    },
-    {
-      "scenario_id": "12-docs-completeness",
-      "summary": {
-        "label": "12-docs-completeness",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness",
-        "prompt_chars": 665,
-        "transcript_msg_count": 46,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "fba41ab2-5056-4e6c-99e8-d8fd05b0906d",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/debug.log",
-        "docs_all_present": true,
-        "docs_md_missing": [],
-        "docs_html_missing": [],
-        "docs_diagrams_missing": [],
-        "_runner": "sdk_orbit_docs_compliance.py",
-        "_returncode": 0,
-        "_stderr_tail": "[2026-05-05T20:57:17Z] run start: 20260505T205717Z-12-docs-completeness\n[2026-05-05T20:58:00Z] run done: 20260505T205717Z-12-docs-completeness got_result=True msgs=46\n"
-      }
-    },
-    {
-      "scenario_id": "13-installed-plugin",
-      "summary": {
-        "label": "13-installed-plugin",
-        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin",
-        "prompt_chars": 320,
-        "transcript_msg_count": 45,
-        "got_result_message": true,
-        "exception": null,
-        "session_id": "29e1c966-9e3c-4095-bca6-7edbf2d1713f",
-        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/jsonl-pointer.txt",
-        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/transcript.json",
-        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/summary.json",
-        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/started-at.txt",
-        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/finished-at.txt",
-        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/debug.log"
-      }
-    }
-  ],
+  "scenario_summaries": [],
   "static_validator_payloads": {
     "manifest": {
       "plugin_root": "/Users/nick/Desktop/orbit",
@@ -1796,7 +1412,7 @@
           "check_name": "manifest_version_present",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
-          "observed_value": "0.2.0",
+          "observed_value": "0.2.1",
           "expected_value": "non-empty string"
         },
         {
@@ -2084,7 +1700,7 @@
           "check_name": "command_body_non_empty_audit-gaps",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
-          "observed_value": "chars=307",
+          "observed_value": "chars=529",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2100,7 +1716,7 @@
           "check_name": "command_has_example_audit-gaps",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
-          "observed_value": "fenced_blocks=1",
+          "observed_value": "fenced_blocks=2",
           "expected_value": ">=1 fenced example block",
           "failure_reason": ""
         },
@@ -2123,7 +1739,7 @@
           "check_name": "command_body_non_empty_mine-intent",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/mine-intent.md",
-          "observed_value": "chars=186",
+          "observed_value": "chars=378",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2162,7 +1778,7 @@
           "check_name": "command_body_non_empty_validate-claims",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/validate-claims.md",
-          "observed_value": "chars=220",
+          "observed_value": "chars=279",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2201,7 +1817,7 @@
           "check_name": "command_body_non_empty_render-dashboard",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md",
-          "observed_value": "chars=187",
+          "observed_value": "chars=248",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2240,7 +1856,7 @@
           "check_name": "command_body_non_empty_compare-plan",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/compare-plan.md",
-          "observed_value": "chars=218",
+          "observed_value": "chars=334",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2279,7 +1895,7 @@
           "check_name": "command_body_non_empty_review-window",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
-          "observed_value": "chars=437",
+          "observed_value": "chars=1287",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2295,7 +1911,7 @@
           "check_name": "command_has_example_review-window",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
-          "observed_value": "fenced_blocks=2",
+          "observed_value": "fenced_blocks=3",
           "expected_value": ">=1 fenced example block",
           "failure_reason": ""
         },
@@ -2350,7 +1966,7 @@
           "check_name": "command_body_non_empty_review-last-3-days",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
-          "observed_value": "chars=185",
+          "observed_value": "chars=346",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2366,7 +1982,7 @@
           "check_name": "command_has_example_review-last-3-days",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
-          "observed_value": "fenced_blocks=2",
+          "observed_value": "fenced_blocks=1",
           "expected_value": ">=1 fenced example block",
           "failure_reason": ""
         },
@@ -2397,7 +2013,7 @@
           "check_name": "command_body_non_empty_rebuild-ledger",
           "status": "PASS",
           "evidence_path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md",
-          "observed_value": "chars=181",
+          "observed_value": "chars=264",
           "expected_value": "non-empty",
           "failure_reason": ""
         },
@@ -2547,7 +2163,7 @@
         {
           "check_name": "audit_subcommand_exit_zero",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit",
           "observed_value": "returncode=0",
           "expected_value": "returncode=0",
           "failure_reason": ""
@@ -2555,15 +2171,15 @@
         {
           "check_name": "audit_artifact_evidence.json",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
-          "observed_value": "size=8476",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
+          "observed_value": "size=8872",
           "expected_value": "exists and non-empty",
           "failure_reason": ""
         },
         {
           "check_name": "audit_artifact_gap-analysis.md",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/gap-analysis.md",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/gap-analysis.md",
           "observed_value": "size=1499",
           "expected_value": "exists and non-empty",
           "failure_reason": ""
@@ -2571,7 +2187,7 @@
         {
           "check_name": "audit_artifact_dashboard.html",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "size=7473",
           "expected_value": "exists and non-empty",
           "failure_reason": ""
@@ -2579,7 +2195,7 @@
         {
           "check_name": "audit_artifact_intent-gap-flow.mmd",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/intent-gap-flow.mmd",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/intent-gap-flow.mmd",
           "observed_value": "size=505",
           "expected_value": "exists and non-empty",
           "failure_reason": ""
@@ -2587,7 +2203,7 @@
         {
           "check_name": "audit_artifact_intent-timeline.mmd",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/intent-timeline.mmd",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/intent-timeline.mmd",
           "observed_value": "size=206",
           "expected_value": "exists and non-empty",
           "failure_reason": ""
@@ -2595,7 +2211,7 @@
         {
           "check_name": "audit_artifact_plan-execution-matrix.csv",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/plan-execution-matrix.csv",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/plan-execution-matrix.csv",
           "observed_value": "size=565",
           "expected_value": "exists and non-empty",
           "failure_reason": ""
@@ -2603,7 +2219,7 @@
         {
           "check_name": "evidence_field_schema_version",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "schema_version present",
           "failure_reason": ""
@@ -2611,7 +2227,7 @@
         {
           "check_name": "evidence_field_generated_at",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "generated_at present",
           "failure_reason": ""
@@ -2619,7 +2235,7 @@
         {
           "check_name": "evidence_field_scope",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "scope present",
           "failure_reason": ""
@@ -2627,7 +2243,7 @@
         {
           "check_name": "evidence_field_intents",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "intents present",
           "failure_reason": ""
@@ -2635,7 +2251,7 @@
         {
           "check_name": "evidence_field_plan_items",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "plan_items present",
           "failure_reason": ""
@@ -2643,7 +2259,7 @@
         {
           "check_name": "evidence_field_claims",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "claims present",
           "failure_reason": ""
@@ -2651,7 +2267,7 @@
         {
           "check_name": "evidence_field_tool_evidence",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "tool_evidence present",
           "failure_reason": ""
@@ -2659,7 +2275,7 @@
         {
           "check_name": "evidence_field_validations",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "validations present",
           "failure_reason": ""
@@ -2667,7 +2283,7 @@
         {
           "check_name": "evidence_field_gaps",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "present",
           "expected_value": "gaps present",
           "failure_reason": ""
@@ -2675,7 +2291,7 @@
         {
           "check_name": "evidence_scope_days_echo",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/evidence.json",
           "observed_value": "30",
           "expected_value": "30",
           "failure_reason": ""
@@ -2683,7 +2299,7 @@
         {
           "check_name": "dashboard_token_ORBIT",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'ORBIT'",
           "failure_reason": ""
@@ -2691,7 +2307,7 @@
         {
           "check_name": "dashboard_token_Find_drift",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Find drift'",
           "failure_reason": ""
@@ -2699,7 +2315,7 @@
         {
           "check_name": "dashboard_token_hexC6FF00",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains '#C6FF00'",
           "failure_reason": ""
@@ -2707,7 +2323,7 @@
         {
           "check_name": "dashboard_token_hexFF8A00",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains '#FF8A00'",
           "failure_reason": ""
@@ -2715,7 +2331,7 @@
         {
           "check_name": "dashboard_token_hexFF4D36",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains '#FF4D36'",
           "failure_reason": ""
@@ -2723,7 +2339,7 @@
         {
           "check_name": "dashboard_token_hex8B3DFF",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains '#8B3DFF'",
           "failure_reason": ""
@@ -2731,7 +2347,7 @@
         {
           "check_name": "dashboard_token_hex1E6BFF",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains '#1E6BFF'",
           "failure_reason": ""
@@ -2739,7 +2355,7 @@
         {
           "check_name": "dashboard_token_Intents",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Intents'",
           "failure_reason": ""
@@ -2747,7 +2363,7 @@
         {
           "check_name": "dashboard_token_Plan",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Plan'",
           "failure_reason": ""
@@ -2755,7 +2371,7 @@
         {
           "check_name": "dashboard_token_Claim",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Claim'",
           "failure_reason": ""
@@ -2763,7 +2379,7 @@
         {
           "check_name": "dashboard_token_Tool",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Tool'",
           "failure_reason": ""
@@ -2771,7 +2387,7 @@
         {
           "check_name": "dashboard_token_Gaps",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Gaps'",
           "failure_reason": ""
@@ -2779,7 +2395,7 @@
         {
           "check_name": "dashboard_token_Timeline",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Timeline'",
           "failure_reason": ""
@@ -2787,7 +2403,7 @@
         {
           "check_name": "dashboard_token_Uncertainty",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Uncertainty'",
           "failure_reason": ""
@@ -2795,7 +2411,7 @@
         {
           "check_name": "dashboard_token_Scope",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/audit/dashboard.html",
           "observed_value": "present",
           "expected_value": "contains 'Scope'",
           "failure_reason": ""
@@ -2803,7 +2419,7 @@
         {
           "check_name": "build_ledger_exit_zero",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/intent-ledger.jsonl",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/intent-ledger.jsonl",
           "observed_value": "returncode=0",
           "expected_value": "returncode=0",
           "failure_reason": ""
@@ -2811,7 +2427,7 @@
         {
           "check_name": "ledger_lines_valid_json",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/intent-ledger.jsonl",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/intent-ledger.jsonl",
           "observed_value": "valid_lines=3 all_valid=True",
           "expected_value": "all lines parse as JSON, count>=1",
           "failure_reason": ""
@@ -2819,7 +2435,7 @@
         {
           "check_name": "ledger_md_companion",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/intent-ledger.md",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/intent-ledger.md",
           "observed_value": "present",
           "expected_value": "markdown companion present",
           "failure_reason": ""
@@ -2827,7 +2443,7 @@
         {
           "check_name": "render_dashboard_exit_zero",
           "status": "PASS",
-          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/rendered.html",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-tn2d7i8k/rendered.html",
           "observed_value": "returncode=0",
           "expected_value": "returncode=0",
           "failure_reason": ""

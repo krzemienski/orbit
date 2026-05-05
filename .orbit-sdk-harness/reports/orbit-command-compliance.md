@@ -28,7 +28,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_audit-gaps",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
-      "observed_value": "chars=307",
+      "observed_value": "chars=529",
       "expected_value": "non-empty",
       "failure_reason": ""
     },
@@ -44,7 +44,7 @@ Status: **PASS**
       "check_name": "command_has_example_audit-gaps",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
-      "observed_value": "fenced_blocks=1",
+      "observed_value": "fenced_blocks=2",
       "expected_value": ">=1 fenced example block",
       "failure_reason": ""
     },
@@ -67,7 +67,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_mine-intent",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/mine-intent.md",
-      "observed_value": "chars=186",
+      "observed_value": "chars=378",
       "expected_value": "non-empty",
       "failure_reason": ""
     },
@@ -106,7 +106,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_validate-claims",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/validate-claims.md",
-      "observed_value": "chars=220",
+      "observed_value": "chars=279",
       "expected_value": "non-empty",
       "failure_reason": ""
     },
@@ -145,7 +145,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_render-dashboard",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md",
-      "observed_value": "chars=187",
+      "observed_value": "chars=248",
       "expected_value": "non-empty",
       "failure_reason": ""
     },
@@ -184,7 +184,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_compare-plan",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/compare-plan.md",
-      "observed_value": "chars=218",
+      "observed_value": "chars=334",
       "expected_value": "non-empty",
       "failure_reason": ""
     },
@@ -223,7 +223,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_review-window",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
-      "observed_value": "chars=437",
+      "observed_value": "chars=1287",
       "expected_value": "non-empty",
       "failure_reason": ""
     },
@@ -239,7 +239,7 @@ Status: **PASS**
       "check_name": "command_has_example_review-window",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
-      "observed_value": "fenced_blocks=2",
+      "observed_value": "fenced_blocks=3",
       "expected_value": ">=1 fenced example block",
       "failure_reason": ""
     },
@@ -294,7 +294,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_review-last-3-days",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
-      "observed_value": "chars=185",
+      "observed_value": "chars=346",
       "expected_value": "non-empty",
       "failure_reason": ""
     },
@@ -310,7 +310,7 @@ Status: **PASS**
       "check_name": "command_has_example_review-last-3-days",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
-      "observed_value": "fenced_blocks=2",
+      "observed_value": "fenced_blocks=1",
       "expected_value": ">=1 fenced example block",
       "failure_reason": ""
     },
@@ -341,7 +341,7 @@ Status: **PASS**
       "check_name": "command_body_non_empty_rebuild-ledger",
       "status": "PASS",
       "evidence_path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md",
-      "observed_value": "chars=181",
+      "observed_value": "chars=264",
       "expected_value": "non-empty",
       "failure_reason": ""
     },

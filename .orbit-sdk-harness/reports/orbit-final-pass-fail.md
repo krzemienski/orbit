@@ -1,6 +1,6 @@
 # Orbit Validation — Final Pass/Fail
 
-Generated: `2026-05-05T20:58:45Z`
+Generated: `2026-05-05T21:41:18Z`
 
 Plugin root: `/Users/nick/Desktop/orbit`
 
@@ -20,12 +20,12 @@ Plugin root: `/Users/nick/Desktop/orbit`
 
 | Plugin Compliance (static) | PASS |
 
-| Installed Plugin Validation | BLOCKED |
+| Installed Plugin Validation | PASS |
 
 | Skill Creator Review | PASS |
 
 | Documentation Completeness | PASS |
 
-| SDK Scenarios | PASS |
+| SDK Scenarios | BLOCKED |
 
 | Dashboard Verification | PASS |
