@@ -1,0 +1,21 @@
+flowchart TD
+  ENV[user environment] --> CLI{claude on PATH?}
+  CLI -->|no| BLK1[BLOCKED: claude CLI missing]
+  CLI -->|yes| IPF[~/.claude/plugins/installed_plugins.json]
+  IPF -->|present| READ[parse payload]
+  IPF -->|missing| BLK2[BLOCKED: plugin index missing]
+  READ -->|orbit listed| INST[orbit_installed=true]
+  READ -->|orbit absent| BLK3[BLOCKED: orbit not installed]
+  INST --> CMD[slash command discovery]
+  CMD -->|interactive only| BLK4[BLOCKED: provide manual cmd]
+  INST --> SK[skill discovery]
+  SK -->|internal to agent loop| BLK5[BLOCKED: provide manual cmd]
+  INST --> HK[hook configuration]
+  HK -->|internal| BLK6[BLOCKED: provide manual cmd]
+  BLK1 --> RPT[orbit-installed-plugin-validation.md]
+  BLK2 --> RPT
+  BLK3 --> RPT
+  BLK4 --> RPT
+  BLK5 --> RPT
+  BLK6 --> RPT
+  INST --> RPT

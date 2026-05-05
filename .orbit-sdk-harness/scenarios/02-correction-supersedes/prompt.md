@@ -1,0 +1,1 @@
+An older capture-oriented plan said the project should record raw transcripts. The user later corrected this and said: 'do not capture more logs; mine existing sessions.' Use Orbit to determine which instruction wins per Orbit's evidence ranking, and what gap Orbit emits. Respond in <=8 lines.

@@ -1,0 +1,1 @@
+Use Orbit to audit this project. The written plan mentions skills and commands, but recent sessions include a user request for first-class dashboard visualization. Determine whether the dashboard request is captured by the plan, implemented in the codebase, and validated by current artifacts. Respond in <=8 lines.

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit · Skills</title><style>
+:root { --black:#0A0A0B; --carbon:#0F1012; --slate:#171920; --panel:#232734;
+        --light:#C7CDD8; --white:#F4F7FB;
+        --lime:#C6FF00; --orange:#FF8A00; --red:#FF4D36; --purple:#8B3DFF; --blue:#1E6BFF; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--black); color:var(--white);
+       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+       line-height:1.55; }
+header.brand { padding:24px 28px; background:var(--carbon); border-bottom:1px solid #232734; }
+header.brand .logo { display:flex; align-items:center; gap:14px; letter-spacing:.18em; font-weight:900; font-size:24px; }
+header.brand .orb { width:24px; height:24px; border:2px solid var(--lime); border-radius:999px; position:relative; box-shadow:0 0 16px rgba(198,255,0,.28); }
+header.brand .orb:after { content:''; position:absolute; width:38px; height:11px; border:2px solid var(--purple); border-left:0; border-right:0; border-radius:999px; top:4px; left:-9px; transform:rotate(-24deg); }
+header.brand .tagline { color:var(--lime); margin-top:8px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+nav.docnav { padding:14px 28px; background:var(--slate); border-bottom:1px solid #232734;
+             font-size:13px; display:flex; flex-wrap:wrap; gap:10px 16px; }
+nav.docnav a { color:var(--light); text-decoration:none; }
+nav.docnav a:hover { color:var(--lime); }
+nav.docnav a.current { color:var(--lime); border-bottom:2px solid var(--orange); padding-bottom:2px; }
+main { max-width:1100px; margin:0 auto; padding:32px 28px 80px; }
+h1, h2, h3 { letter-spacing:-.01em; }
+h1 { color:var(--lime); border-bottom:1px solid #2a2f3a; padding-bottom:12px; }
+h2 { color:var(--orange); margin-top:32px; }
+h3 { color:var(--blue); margin-top:24px; }
+a { color:var(--lime); }
+code { color:var(--lime); background:var(--carbon); padding:1px 6px; border-radius:4px; font-size:.92em; }
+pre { background:var(--carbon); border:1px solid #232734; border-left:3px solid var(--purple);
+      padding:14px 16px; border-radius:8px; overflow:auto; }
+pre code { background:transparent; padding:0; color:var(--white); }
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border-bottom:1px solid #232734; padding:10px 14px; text-align:left; vertical-align:top; }
+th { color:var(--lime); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+blockquote { border-left:3px solid var(--orange); margin:14px 0; padding:8px 14px; background:var(--carbon); color:var(--light); }
+hr { border:0; border-top:1px solid #232734; margin:32px 0; }
+.brand-chip { display:inline-block; padding:2px 10px; border-radius:999px; margin-right:6px; font-size:11px; }
+.lime { background:var(--lime); color:#000; }
+.orange { background:var(--orange); color:#000; }
+.red { background:var(--red); color:#fff; }
+.purple { background:var(--purple); color:#fff; }
+.blue { background:var(--blue); color:#fff; }
+</style></head><body><header class="brand"><div class="logo"><div class="orb"></div>ORBIT</div><div class="tagline">Find drift. Close gaps. Restore alignment.</div></header><nav class="docnav"><a class="" href="index.html">Orbit Documentation</a><a class="" href="install.html">Install</a><a class="" href="usage.html">Usage</a><a class="" href="commands.html">Commands</a><a class="" href="hooks.html">Hooks</a><a class="current" href="skills.html">Skills</a><a class="" href="evidence-model.html">Evidence Model</a><a class="" href="validation.html">Validation</a><a class="" href="sdk-harness.html">SDK Harness</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="reports.html">Reports</a><a class="" href="compliance.html">Compliance</a><a class="" href="plugin-validation.html">Plugin Validation</a><a class="" href="skill-creator-review.html">Skill Creator Review</a><a class="" href="troubleshooting.html">Troubleshooting</a><a class="" href="diagrams.html">Diagrams</a><a class="" href="validation-research.html">Validation Research</a><a class="" href="architecture.html">Architecture</a><a class="" href="installed-plugin-validation.html">Installed Plugin Validation</a></nav><main><p><span class="brand-chip lime">lime #C6FF00</span><span class="brand-chip orange">orange #FF8A00</span><span class="brand-chip red">red #FF4D36</span><span class="brand-chip purple">purple #8B3DFF</span><span class="brand-chip blue">blue #1E6BFF</span></p><h1>Skills</h1>
+<p>Orbit ships four skills. Each lives at <code>skills/&lt;name&gt;/SKILL.md</code> with YAML frontmatter and an operational body.</p>
+<h2><code>gap-analysis</code></h2>
+<p>Trigger: any audit-like or look-back request — &quot;audit&quot;, &quot;look back&quot;, &quot;review-window&quot;, &quot;what did we miss&quot;, &quot;gap analysis&quot;, &quot;compare to the plan&quot;, &quot;did it actually get done&quot;.</p>
+<p>Workflow: scope → plan extract → session mine → intent extract → claim extract → tool evidence → codebase validate → gap synthesize → output <code>evidence.json</code>, <code>gap-analysis.md</code>, <code>dashboard.html</code>, <code>intent-gap-flow.mmd</code>, <code>intent-timeline.mmd</code>, <code>plan-execution-matrix.csv</code>.</p>
+<h2><code>instruction-ledger</code></h2>
+<p>Trigger: project-memory and intent-corpus requests — &quot;ledger&quot;, &quot;rebuild the ledger&quot;, &quot;what did I tell you&quot;, &quot;project memory&quot;, &quot;corrections&quot;.</p>
+<p>Watches signal phrases: actually, no instead, we decided, go with, settled on, from now on, make sure, must include, do not, you forgot, this is wrong, changed our mind.</p>
+<p>Outputs: <code>.claude/audits/intent-ledger.jsonl</code> plus a markdown companion.</p>
+<h2><code>plan-execution-audit</code></h2>
+<p>Trigger: &quot;compare to the plan&quot;, &quot;does this match the plan&quot;, &quot;what plan items are missing&quot;, &quot;what got superseded&quot;.</p>
+<p>Marks each plan item as complete, partial, unverified, contradicted, stale, or superseded. Plan omission means &quot;not found in the plan&quot; — never proof the user did not request it.</p>
+<h2><code>validation-pairing</code></h2>
+<p>Trigger: &quot;did it actually do it&quot;, &quot;validate the claims&quot;, &quot;prove it was completed&quot;, &quot;check against the repo&quot;, &quot;functional validation&quot;.</p>
+<p>For every completion claim: locate it, find related tool evidence, inspect relevant files, run safe configured validation, and tag <code>validated</code>, <code>partially validated</code>, <code>unverified</code>, <code>contradicted</code>, <code>stale</code>, or <code>uncertain</code>. No destructive checks unless explicitly configured.</p>
+<h2>Compliance</h2>
+<p><code>validate_skill_frontmatter.py</code> verifies for every skill:</p>
+<ul>
+<li>frontmatter delimited by <code>---</code></li>
+<li><code>name</code> matches <code>^[a-z0-9-]+$</code> and length ≤ 64</li>
+<li><code>description</code> is non-empty, has no XML tags, length ≤ 1024</li>
+<li>body is non-empty</li>
+</ul></main></body></html>

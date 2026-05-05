@@ -1,0 +1,1 @@
+Describe Orbit's durable instruction ledger: which signals it watches ('actually', 'we decided', 'go with', 'from now on', 'do not', 'changed our mind', etc.), the JSONL record fields it writes, and how it differentiates active from superseded entries. Respond in <=10 lines.

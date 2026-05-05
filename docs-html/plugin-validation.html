@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit · Plugin Validation</title><style>
+:root { --black:#0A0A0B; --carbon:#0F1012; --slate:#171920; --panel:#232734;
+        --light:#C7CDD8; --white:#F4F7FB;
+        --lime:#C6FF00; --orange:#FF8A00; --red:#FF4D36; --purple:#8B3DFF; --blue:#1E6BFF; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--black); color:var(--white);
+       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+       line-height:1.55; }
+header.brand { padding:24px 28px; background:var(--carbon); border-bottom:1px solid #232734; }
+header.brand .logo { display:flex; align-items:center; gap:14px; letter-spacing:.18em; font-weight:900; font-size:24px; }
+header.brand .orb { width:24px; height:24px; border:2px solid var(--lime); border-radius:999px; position:relative; box-shadow:0 0 16px rgba(198,255,0,.28); }
+header.brand .orb:after { content:''; position:absolute; width:38px; height:11px; border:2px solid var(--purple); border-left:0; border-right:0; border-radius:999px; top:4px; left:-9px; transform:rotate(-24deg); }
+header.brand .tagline { color:var(--lime); margin-top:8px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+nav.docnav { padding:14px 28px; background:var(--slate); border-bottom:1px solid #232734;
+             font-size:13px; display:flex; flex-wrap:wrap; gap:10px 16px; }
+nav.docnav a { color:var(--light); text-decoration:none; }
+nav.docnav a:hover { color:var(--lime); }
+nav.docnav a.current { color:var(--lime); border-bottom:2px solid var(--orange); padding-bottom:2px; }
+main { max-width:1100px; margin:0 auto; padding:32px 28px 80px; }
+h1, h2, h3 { letter-spacing:-.01em; }
+h1 { color:var(--lime); border-bottom:1px solid #2a2f3a; padding-bottom:12px; }
+h2 { color:var(--orange); margin-top:32px; }
+h3 { color:var(--blue); margin-top:24px; }
+a { color:var(--lime); }
+code { color:var(--lime); background:var(--carbon); padding:1px 6px; border-radius:4px; font-size:.92em; }
+pre { background:var(--carbon); border:1px solid #232734; border-left:3px solid var(--purple);
+      padding:14px 16px; border-radius:8px; overflow:auto; }
+pre code { background:transparent; padding:0; color:var(--white); }
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border-bottom:1px solid #232734; padding:10px 14px; text-align:left; vertical-align:top; }
+th { color:var(--lime); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+blockquote { border-left:3px solid var(--orange); margin:14px 0; padding:8px 14px; background:var(--carbon); color:var(--light); }
+hr { border:0; border-top:1px solid #232734; margin:32px 0; }
+.brand-chip { display:inline-block; padding:2px 10px; border-radius:999px; margin-right:6px; font-size:11px; }
+.lime { background:var(--lime); color:#000; }
+.orange { background:var(--orange); color:#000; }
+.red { background:var(--red); color:#fff; }
+.purple { background:var(--purple); color:#fff; }
+.blue { background:var(--blue); color:#fff; }
+</style></head><body><header class="brand"><div class="logo"><div class="orb"></div>ORBIT</div><div class="tagline">Find drift. Close gaps. Restore alignment.</div></header><nav class="docnav"><a class="" href="index.html">Orbit Documentation</a><a class="" href="install.html">Install</a><a class="" href="usage.html">Usage</a><a class="" href="commands.html">Commands</a><a class="" href="hooks.html">Hooks</a><a class="" href="skills.html">Skills</a><a class="" href="evidence-model.html">Evidence Model</a><a class="" href="validation.html">Validation</a><a class="" href="sdk-harness.html">SDK Harness</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="reports.html">Reports</a><a class="" href="compliance.html">Compliance</a><a class="current" href="plugin-validation.html">Plugin Validation</a><a class="" href="skill-creator-review.html">Skill Creator Review</a><a class="" href="troubleshooting.html">Troubleshooting</a><a class="" href="diagrams.html">Diagrams</a><a class="" href="validation-research.html">Validation Research</a><a class="" href="architecture.html">Architecture</a><a class="" href="installed-plugin-validation.html">Installed Plugin Validation</a></nav><main><p><span class="brand-chip lime">lime #C6FF00</span><span class="brand-chip orange">orange #FF8A00</span><span class="brand-chip red">red #FF4D36</span><span class="brand-chip purple">purple #8B3DFF</span><span class="brand-chip blue">blue #1E6BFF</span></p><h1>Plugin Validation</h1>
+<p>Plugin validation = &quot;the files on disk match the Claude Code plugin contract&quot;. This is distinct from installed-plugin validation (see <code>installed-plugin-validation.md</code>), which asks &quot;is the plugin loaded into the user&#x27;s Claude Code environment&quot;.</p>
+<h2>Files-on-disk contract</h2>
+<p>Required:</p>
+<pre><code class="language-text">.claude-plugin/plugin.json    parses; { name: &quot;orbit&quot;, description: &quot;...&quot;, version: &quot;...&quot;, skills: &quot;./skills&quot;, commands: &quot;./commands&quot;, hooks: &quot;./hooks/hooks.json&quot; }
+skills/&lt;name&gt;/SKILL.md        per-skill, with valid frontmatter
+commands/&lt;name&gt;.md            per-slash-command
+hooks/hooks.json              parses, references existing executable scripts
+scripts/orbit_audit.py        engine
+scripts/hook_*.py             hook scripts (executable)
+bin/orbit-*                   thin wrappers around scripts/orbit_audit.py
+README.md, CHANGELOG.md, PRD.md</code></pre>
+<h2>Manifest checks</h2>
+<ul>
+<li><code>name</code> is <code>orbit</code></li>
+<li><code>version</code> is a non-empty string</li>
+<li><code>description</code> is a non-empty string</li>
+<li><code>skills</code>, <code>commands</code>, <code>hooks</code> paths all resolve to existing files/dirs</li>
+</ul>
+<h2>Skill checks (per skill)</h2>
+<ul>
+<li><code>SKILL.md</code> present</li>
+<li>frontmatter delimited</li>
+<li><code>name</code> matches <code>^[a-z0-9-]+$</code> and length ≤ 64</li>
+<li><code>description</code> non-empty, no XML tags, length ≤ 1024</li>
+<li>body non-empty</li>
+</ul>
+<h2>Hook checks</h2>
+<ul>
+<li><code>hooks.json</code> parses as JSON</li>
+<li>top-level <code>hooks</code> is a non-empty object</li>
+<li>every event name is one of the recognized Claude Code events</li>
+<li>every command resolves to an existing file</li>
+<li>every hook script is executable</li>
+<li>every hook script accepts a benign JSON stdin payload and exits 0</li>
+</ul>
+<h2>Command checks (per command)</h2>
+<ul>
+<li>markdown body non-empty</li>
+<li>leading heading present</li>
+<li>≥1 fenced example block</li>
+<li>helper or skill mapping mentioned</li>
+<li><code>review-window</code> documents <code>--days</code>, <code>--since</code>, <code>--from</code>, <code>--to</code></li>
+<li><code>review-last-3-days</code> documents alias for <code>--days 3</code></li>
+</ul>
+<h2>Output checks (orbit-audit)</h2>
+<ul>
+<li><code>audit</code> subcommand exits 0 against bundled fixtures</li>
+<li>writes every required artifact (<code>evidence.json</code>, <code>gap-analysis.md</code>, <code>dashboard.html</code>, two <code>.mmd</code>, one <code>.csv</code>)</li>
+<li>evidence has every required schema field</li>
+<li>evidence <code>scope.days</code> echoes the <code>--days</code> input</li>
+<li>dashboard contains every brand token and section heading</li>
+<li><code>build-ledger</code> produces valid JSONL + markdown companion</li>
+<li><code>render-dashboard</code> exits 0</li>
+</ul></main></body></html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit · Skill Creator Review</title><style>
+:root { --black:#0A0A0B; --carbon:#0F1012; --slate:#171920; --panel:#232734;
+        --light:#C7CDD8; --white:#F4F7FB;
+        --lime:#C6FF00; --orange:#FF8A00; --red:#FF4D36; --purple:#8B3DFF; --blue:#1E6BFF; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--black); color:var(--white);
+       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+       line-height:1.55; }
+header.brand { padding:24px 28px; background:var(--carbon); border-bottom:1px solid #232734; }
+header.brand .logo { display:flex; align-items:center; gap:14px; letter-spacing:.18em; font-weight:900; font-size:24px; }
+header.brand .orb { width:24px; height:24px; border:2px solid var(--lime); border-radius:999px; position:relative; box-shadow:0 0 16px rgba(198,255,0,.28); }
+header.brand .orb:after { content:''; position:absolute; width:38px; height:11px; border:2px solid var(--purple); border-left:0; border-right:0; border-radius:999px; top:4px; left:-9px; transform:rotate(-24deg); }
+header.brand .tagline { color:var(--lime); margin-top:8px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+nav.docnav { padding:14px 28px; background:var(--slate); border-bottom:1px solid #232734;
+             font-size:13px; display:flex; flex-wrap:wrap; gap:10px 16px; }
+nav.docnav a { color:var(--light); text-decoration:none; }
+nav.docnav a:hover { color:var(--lime); }
+nav.docnav a.current { color:var(--lime); border-bottom:2px solid var(--orange); padding-bottom:2px; }
+main { max-width:1100px; margin:0 auto; padding:32px 28px 80px; }
+h1, h2, h3 { letter-spacing:-.01em; }
+h1 { color:var(--lime); border-bottom:1px solid #2a2f3a; padding-bottom:12px; }
+h2 { color:var(--orange); margin-top:32px; }
+h3 { color:var(--blue); margin-top:24px; }
+a { color:var(--lime); }
+code { color:var(--lime); background:var(--carbon); padding:1px 6px; border-radius:4px; font-size:.92em; }
+pre { background:var(--carbon); border:1px solid #232734; border-left:3px solid var(--purple);
+      padding:14px 16px; border-radius:8px; overflow:auto; }
+pre code { background:transparent; padding:0; color:var(--white); }
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border-bottom:1px solid #232734; padding:10px 14px; text-align:left; vertical-align:top; }
+th { color:var(--lime); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+blockquote { border-left:3px solid var(--orange); margin:14px 0; padding:8px 14px; background:var(--carbon); color:var(--light); }
+hr { border:0; border-top:1px solid #232734; margin:32px 0; }
+.brand-chip { display:inline-block; padding:2px 10px; border-radius:999px; margin-right:6px; font-size:11px; }
+.lime { background:var(--lime); color:#000; }
+.orange { background:var(--orange); color:#000; }
+.red { background:var(--red); color:#fff; }
+.purple { background:var(--purple); color:#fff; }
+.blue { background:var(--blue); color:#fff; }
+</style></head><body><header class="brand"><div class="logo"><div class="orb"></div>ORBIT</div><div class="tagline">Find drift. Close gaps. Restore alignment.</div></header><nav class="docnav"><a class="" href="index.html">Orbit Documentation</a><a class="" href="install.html">Install</a><a class="" href="usage.html">Usage</a><a class="" href="commands.html">Commands</a><a class="" href="hooks.html">Hooks</a><a class="" href="skills.html">Skills</a><a class="" href="evidence-model.html">Evidence Model</a><a class="" href="validation.html">Validation</a><a class="" href="sdk-harness.html">SDK Harness</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="reports.html">Reports</a><a class="" href="compliance.html">Compliance</a><a class="" href="plugin-validation.html">Plugin Validation</a><a class="current" href="skill-creator-review.html">Skill Creator Review</a><a class="" href="troubleshooting.html">Troubleshooting</a><a class="" href="diagrams.html">Diagrams</a><a class="" href="validation-research.html">Validation Research</a><a class="" href="architecture.html">Architecture</a><a class="" href="installed-plugin-validation.html">Installed Plugin Validation</a></nav><main><p><span class="brand-chip lime">lime #C6FF00</span><span class="brand-chip orange">orange #FF8A00</span><span class="brand-chip red">red #FF4D36</span><span class="brand-chip purple">purple #8B3DFF</span><span class="brand-chip blue">blue #1E6BFF</span></p><h1>Skill Creator-style Review</h1>
+<p>Each Orbit skill is reviewed against six criteria modeled on the Claude Code Skill Creator rubric. The Orbit-specific scoring is implemented in <code>sdk_orbit_skill_compliance.py</code> and <code>sdk_orbit_all.py::skill_creator_review()</code>.</p>
+<h2>Criteria</h2>
+<table>
+<thead><tr><th>Criterion</th><th>What it measures</th><th>5-point scale</th></tr></thead>
+<tbody>
+<tr><td><code>trigger_accuracy</code></td><td>How many concrete trigger phrases the skill description names</td><td>5 if ≥3 phrases match, 4 if ≥2, 3 if 1, 1 otherwise</td></tr>
+<tr><td><code>clarity</code></td><td>Is the description in the sweet spot (80–1024 chars)?</td><td>5 if yes, 3 otherwise</td></tr>
+<tr><td><code>scope_fit</code></td><td>Does the description disambiguate vs. other skills?</td><td>5 if ≥2 trigger phrases, 3 otherwise</td></tr>
+<tr><td><code>frontmatter_compliance</code></td><td>Does <code>name</code> match the directory? Frontmatter parse cleanly?</td><td>5 if yes, 1 if not</td></tr>
+<tr><td><code>operational_completeness</code></td><td>Body describes a workflow, rule, contract, or outputs?</td><td>5 if any of those tokens present, 3 otherwise</td></tr>
+</tbody></table>
+<p><code>overall = round(mean(criteria), 2)</code>. A skill is PASS at <code>overall ≥ 4.0</code> AND no improvement actions outstanding.</p>
+<h2>Per-skill expectations</h2>
+<table>
+<thead><tr><th>Skill</th><th>Expected trigger hints</th></tr></thead>
+<tbody>
+<tr><td><code>gap-analysis</code></td><td>&quot;audit&quot;, &quot;look back&quot;, &quot;review-window&quot;, &quot;what did we miss&quot;, &quot;gap analysis&quot;, &quot;compare to the plan&quot;</td></tr>
+<tr><td><code>instruction-ledger</code></td><td>&quot;ledger&quot;, &quot;rebuild the ledger&quot;, &quot;what did I tell you&quot;, &quot;project memory&quot;, &quot;corrections&quot;</td></tr>
+<tr><td><code>plan-execution-audit</code></td><td>&quot;compare to the plan&quot;, &quot;does this match the plan&quot;, &quot;missing&quot;, &quot;superseded&quot;</td></tr>
+<tr><td><code>validation-pairing</code></td><td>&quot;did it actually do it&quot;, &quot;validate the claims&quot;, &quot;prove it was completed&quot;, &quot;check against the repo&quot;</td></tr>
+</tbody></table>
+<h2>Output</h2>
+<p><code>reports/orbit-skill-creator-review.md</code> contains a per-skill scoring table and recommended improvements. The matching JSON payload is at <code>reports/evidence/skill-creator-review.json</code>.</p>
+<p>A failing review is a <code>FAIL</code>, not a warning. The fix is to broaden the description&#x27;s trigger phrases or restructure the body — the review then re-runs.</p></main></body></html>

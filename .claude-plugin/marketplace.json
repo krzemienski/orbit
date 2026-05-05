@@ -1,0 +1,11 @@
+{
+  "name": "orbit-dev",
+  "owner": {"name": "orbit-local"},
+  "plugins": [
+    {
+      "name": "orbit",
+      "source": "./",
+      "description": "Mines local Claude Code session transcripts and compares user intent against plans, claims, tool evidence, and codebase truth. Renders gap-analysis dashboard."
+    }
+  ]
+}

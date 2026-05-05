@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit · Evidence Model</title><style>
+:root { --black:#0A0A0B; --carbon:#0F1012; --slate:#171920; --panel:#232734;
+        --light:#C7CDD8; --white:#F4F7FB;
+        --lime:#C6FF00; --orange:#FF8A00; --red:#FF4D36; --purple:#8B3DFF; --blue:#1E6BFF; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--black); color:var(--white);
+       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+       line-height:1.55; }
+header.brand { padding:24px 28px; background:var(--carbon); border-bottom:1px solid #232734; }
+header.brand .logo { display:flex; align-items:center; gap:14px; letter-spacing:.18em; font-weight:900; font-size:24px; }
+header.brand .orb { width:24px; height:24px; border:2px solid var(--lime); border-radius:999px; position:relative; box-shadow:0 0 16px rgba(198,255,0,.28); }
+header.brand .orb:after { content:''; position:absolute; width:38px; height:11px; border:2px solid var(--purple); border-left:0; border-right:0; border-radius:999px; top:4px; left:-9px; transform:rotate(-24deg); }
+header.brand .tagline { color:var(--lime); margin-top:8px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+nav.docnav { padding:14px 28px; background:var(--slate); border-bottom:1px solid #232734;
+             font-size:13px; display:flex; flex-wrap:wrap; gap:10px 16px; }
+nav.docnav a { color:var(--light); text-decoration:none; }
+nav.docnav a:hover { color:var(--lime); }
+nav.docnav a.current { color:var(--lime); border-bottom:2px solid var(--orange); padding-bottom:2px; }
+main { max-width:1100px; margin:0 auto; padding:32px 28px 80px; }
+h1, h2, h3 { letter-spacing:-.01em; }
+h1 { color:var(--lime); border-bottom:1px solid #2a2f3a; padding-bottom:12px; }
+h2 { color:var(--orange); margin-top:32px; }
+h3 { color:var(--blue); margin-top:24px; }
+a { color:var(--lime); }
+code { color:var(--lime); background:var(--carbon); padding:1px 6px; border-radius:4px; font-size:.92em; }
+pre { background:var(--carbon); border:1px solid #232734; border-left:3px solid var(--purple);
+      padding:14px 16px; border-radius:8px; overflow:auto; }
+pre code { background:transparent; padding:0; color:var(--white); }
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border-bottom:1px solid #232734; padding:10px 14px; text-align:left; vertical-align:top; }
+th { color:var(--lime); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+blockquote { border-left:3px solid var(--orange); margin:14px 0; padding:8px 14px; background:var(--carbon); color:var(--light); }
+hr { border:0; border-top:1px solid #232734; margin:32px 0; }
+.brand-chip { display:inline-block; padding:2px 10px; border-radius:999px; margin-right:6px; font-size:11px; }
+.lime { background:var(--lime); color:#000; }
+.orange { background:var(--orange); color:#000; }
+.red { background:var(--red); color:#fff; }
+.purple { background:var(--purple); color:#fff; }
+.blue { background:var(--blue); color:#fff; }
+</style></head><body><header class="brand"><div class="logo"><div class="orb"></div>ORBIT</div><div class="tagline">Find drift. Close gaps. Restore alignment.</div></header><nav class="docnav"><a class="" href="index.html">Orbit Documentation</a><a class="" href="install.html">Install</a><a class="" href="usage.html">Usage</a><a class="" href="commands.html">Commands</a><a class="" href="hooks.html">Hooks</a><a class="" href="skills.html">Skills</a><a class="current" href="evidence-model.html">Evidence Model</a><a class="" href="validation.html">Validation</a><a class="" href="sdk-harness.html">SDK Harness</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="reports.html">Reports</a><a class="" href="compliance.html">Compliance</a><a class="" href="plugin-validation.html">Plugin Validation</a><a class="" href="skill-creator-review.html">Skill Creator Review</a><a class="" href="troubleshooting.html">Troubleshooting</a><a class="" href="diagrams.html">Diagrams</a><a class="" href="validation-research.html">Validation Research</a><a class="" href="architecture.html">Architecture</a><a class="" href="installed-plugin-validation.html">Installed Plugin Validation</a></nav><main><p><span class="brand-chip lime">lime #C6FF00</span><span class="brand-chip orange">orange #FF8A00</span><span class="brand-chip red">red #FF4D36</span><span class="brand-chip purple">purple #8B3DFF</span><span class="brand-chip blue">blue #1E6BFF</span></p><h1>Evidence Model</h1>
+<p>Orbit&#x27;s evidence is a single JSON document (<code>evidence.json</code>, <code>schema_version: &quot;0.2&quot;</code>) that normalizes everything Orbit observes into seven typed lists.</p>
+<h2>Top-level shape</h2>
+<pre><code class="language-json">{
+  &quot;schema_version&quot;: &quot;0.2&quot;,
+  &quot;generated_at&quot;: &quot;ISO UTC&quot;,
+  &quot;project&quot;: { &quot;cwd&quot;: &quot;...&quot;, &quot;name&quot;: &quot;...&quot; },
+  &quot;scope&quot;:   { &quot;days&quot;: 3, &quot;since&quot;: null, &quot;from&quot;: null, &quot;to&quot;: null, &quot;query&quot;: &quot;...&quot;, &quot;plans&quot;: [] },
+  &quot;sources&quot;: { &quot;sessions&quot;: [&quot;...&quot;], &quot;plans&quot;: [&quot;...&quot;] },
+  &quot;intents&quot;:        [ { &quot;id&quot;: &quot;intent_NNNN&quot;, &quot;kind&quot;: &quot;...&quot;, &quot;text&quot;: &quot;...&quot;, &quot;source&quot;: {...}, &quot;directness&quot;: &quot;...&quot;, &quot;specificity&quot;: &quot;...&quot;, &quot;status&quot;: &quot;...&quot;, &quot;matched_patterns&quot;: [...] } ],
+  &quot;plan_items&quot;:     [ { &quot;id&quot;: &quot;plan_NNNN&quot;, &quot;source_file&quot;: &quot;...&quot;, &quot;line_number&quot;: 1, &quot;heading&quot;: &quot;...&quot;, &quot;text&quot;: &quot;...&quot;, &quot;status_hint&quot;: &quot;...&quot; } ],
+  &quot;claims&quot;:         [ { &quot;id&quot;: &quot;claim_NNNN&quot;, &quot;text&quot;: &quot;...&quot;, &quot;claim_type&quot;: &quot;completion&quot;, &quot;source&quot;: {...}, &quot;validation_status&quot;: &quot;unverified&quot; } ],
+  &quot;tool_evidence&quot;:  [ { &quot;id&quot;: &quot;tool_NNNN&quot;, &quot;tool_name&quot;: &quot;...&quot;, &quot;action&quot;: &quot;...&quot;, &quot;target&quot;: &quot;...&quot;, &quot;status&quot;: &quot;observed&quot;, &quot;source&quot;: {...}, &quot;text&quot;: &quot;...&quot; } ],
+  &quot;validations&quot;:    [ { &quot;id&quot;: &quot;validation_NNNN&quot;, &quot;target_type&quot;: &quot;claim|artifact&quot;, &quot;target_id&quot;: &quot;...&quot;, &quot;check&quot;: &quot;artifact_exists|claim_path_exists&quot;, &quot;path&quot;: &quot;...&quot;, &quot;status&quot;: &quot;passed|failed|unverified&quot;, &quot;evidence&quot;: &quot;...&quot;, &quot;severity&quot;: &quot;low|medium|high&quot; } ],
+  &quot;gaps&quot;:           [ { &quot;id&quot;: &quot;gap_NNNN&quot;, &quot;category&quot;: &quot;...&quot;, &quot;severity&quot;: &quot;low|medium|high&quot;, &quot;title&quot;: &quot;...&quot;, &quot;summary&quot;: &quot;...&quot;, &quot;evidence_ids&quot;: [...], &quot;recommended_next_action&quot;: &quot;...&quot; } ],
+  &quot;conflicts&quot;:      [],
+  &quot;uncertainties&quot;:  []
+}</code></pre>
+<h2>Intent kinds</h2>
+<p><code>requirement</code>, <code>correction</code>, <code>rename</code>, <code>preference</code>, <code>constraint</code>, <code>non-goal</code>, <code>validation-request</code>, <code>visualization-request</code>, <code>workflow-change</code>, <code>approval-gate</code>. The classifier in <code>orbit_audit.py::classify_intent</code> collapses these into the kinds visible in the JSON.</p>
+<h2>Validation checks</h2>
+<p><code>file_exists</code>, <code>symbol_exists</code>, <code>text_exists</code>, <code>artifact_exists</code>, <code>script_executable</code>, <code>command_succeeded</code>, <code>test_succeeded</code>, <code>build_succeeded</code>, <code>lint_succeeded</code>, <code>schema_valid</code>. The default safe set is <code>artifact_exists</code> + <code>claim_path_exists</code> (path mention in the claim text).</p>
+<h2>Gap categories</h2>
+<p><code>intent-not-planned</code>, <code>intent-not-implemented</code>, <code>claim-not-validated</code>, <code>claim-contradicted</code>, <code>plan-stale</code>, <code>plan-omission</code>, <code>session-only-decision</code>, <code>superseded-plan-item</code>, <code>missing-artifact</code>, <code>missing-validation</code>, <code>ambiguous-evidence</code>.</p>
+<h2>Evidence ranking</h2>
+<p>When two pieces of evidence conflict, Orbit ranks (highest → lowest):</p>
+<ol>
+<li>Later direct user instruction</li>
+<li>Specific user correction</li>
+<li>Direct session evidence tied to implementation</li>
+<li>Tool-use evidence showing actual action</li>
+<li>Tool-result evidence showing success or failure</li>
+<li>Current codebase state</li>
+<li>Test/build/lint validation result</li>
+<li>Earlier direct user instruction</li>
+<li>Written plan evidence</li>
+<li>Assistant claim or summary</li>
+<li>Inference across multiple sources</li>
+<li>History metadata only</li>
+</ol>
+<h2>Cardinal rule</h2>
+<p>A plan omission is &quot;not found in the plan.&quot; It is not proof the user did not request it. Orbit always emits a gap, never a silent denial.</p></main></body></html>

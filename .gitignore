@@ -1,0 +1,37 @@
+# mimirs index
+.mimirs/
+
+# Per-run validation artifacts (regenerated each forge run)
+.orbit-sdk-harness/runs/
+.orbit-sdk-harness/reports/master-run.log
+.orbit-sdk-harness/reports/evidence/
+
+# Crucible session receipts (per-run forge state)
+evidence/session-receipts/
+.crucible/active
+.crucible/disabled
+
+# Claude Code per-run audit outputs
+.claude/audits/
+
+# Local OMC / Remember caches
+.omc/
+.remember/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Live validation scratch
+/tmp-validation/

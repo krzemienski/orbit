@@ -1,0 +1,1 @@
+An assistant said: 'Done. I implemented dashboard_renderer.py and generated dashboard.html.' But there is no tool-use evidence and no file at scripts/dashboard_renderer.py. Use Orbit's validation pairing rules to decide whether this claim is validated, unverified, or contradicted, and what gap category Orbit emits. Respond in <=8 lines.

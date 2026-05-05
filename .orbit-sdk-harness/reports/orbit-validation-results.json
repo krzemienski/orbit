@@ -1,0 +1,2926 @@
+{
+  "generated_at": "2026-05-05T20:58:45Z",
+  "plugin_root": "/Users/nick/Desktop/orbit",
+  "overall": "BLOCKED",
+  "section_status": {
+    "architecture_discovery": "PASS",
+    "documentation_research": "PASS",
+    "installed_plugin_validation": "BLOCKED",
+    "plugin_compliance_static": "PASS",
+    "skill_creator_review": "PASS",
+    "documentation_completeness": "PASS",
+    "sdk_scenarios": "PASS",
+    "dashboard_verification": "PASS"
+  },
+  "checks": [
+    {
+      "check_name": "architecture_plugin_root_exists",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit",
+      "observed_value": "present",
+      "expected_value": "plugin root exists",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_manifest_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+      "observed_value": "present",
+      "expected_value": "manifest discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_skills_dir_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/skills",
+      "observed_value": "present",
+      "expected_value": "skills_dir discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_commands_dir_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/commands",
+      "observed_value": "present",
+      "expected_value": "commands_dir discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_hooks_file_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+      "observed_value": "present",
+      "expected_value": "hooks_file discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_scripts_dir_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/scripts",
+      "observed_value": "present",
+      "expected_value": "scripts_dir discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_bin_dir_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/bin",
+      "observed_value": "present",
+      "expected_value": "bin_dir discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_readme_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/README.md",
+      "observed_value": "present",
+      "expected_value": "readme discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_changelog_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/CHANGELOG.md",
+      "observed_value": "present",
+      "expected_value": "changelog discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_prd_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/PRD.md",
+      "observed_value": "present",
+      "expected_value": "prd discoverable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_skill_count",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/skills",
+      "observed_value": "4 skills",
+      "expected_value": ">=4 skills",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_command_count",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/commands",
+      "observed_value": "8 commands",
+      "expected_value": ">=8 commands",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "architecture_bin_wrappers",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/bin",
+      "observed_value": "3 bin wrappers",
+      "expected_value": ">=1 bin wrapper",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "docs_research_claude_agent_sdk",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Library/Python/3.12/lib/python/site-packages/claude_agent_sdk",
+      "observed_value": "version=0.1.68",
+      "expected_value": "claude-agent-sdk importable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "docs_research_plugin_manifest",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+      "observed_value": "manifest present + parsed",
+      "expected_value": "manifest readable",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "docs_research_hooks_io",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+      "observed_value": "events=['UserPromptExpansion', 'UserPromptSubmit']",
+      "expected_value": "non-empty events + scripts present",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "docs_research_skill_frontmatter",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/skills",
+      "observed_value": "skill files=4",
+      "expected_value": ">=1 SKILL.md",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "docs_research_slash_commands",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/commands",
+      "observed_value": "command files=8",
+      "expected_value": ">=1 command markdown file",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "installed_plugins_json_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/.claude/plugins/installed_plugins.json",
+      "observed_value": "present",
+      "expected_value": "~/.claude/plugins/installed_plugins.json present",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "ls ~/.claude/plugins/installed_plugins.json",
+      "notes": ""
+    },
+    {
+      "check_name": "orbit_installed",
+      "status": "BLOCKED",
+      "evidence_path": "/Users/nick/.claude/plugins/installed_plugins.json",
+      "observed_value": "orbit_install_dirs=[]",
+      "expected_value": "orbit listed in installed_plugins.json or under ~/.claude/plugins/",
+      "failure_reason": "",
+      "blocker_reason": "Orbit not installed in current Claude Code environment",
+      "manual_verification_command": "claude plugin list 2>&1 | grep -i orbit ; ls ~/.claude/plugins/ | grep -i orbit",
+      "notes": ""
+    },
+    {
+      "check_name": "claude_cli_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/.local/bin/claude",
+      "observed_value": "/Users/nick/.local/bin/claude",
+      "expected_value": "claude CLI on PATH",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "which claude && claude --version",
+      "notes": ""
+    },
+    {
+      "check_name": "installed_plugin_command_discovery",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "non-interactive enumeration not supported by current Claude Code CLI",
+      "expected_value": "Installed Orbit commands discoverable",
+      "failure_reason": "",
+      "blocker_reason": "`claude plugin list` is interactive; harness cannot enumerate slash commands non-interactively",
+      "manual_verification_command": "claude /orbit:audit-gaps  # interactive verify",
+      "notes": ""
+    },
+    {
+      "check_name": "installed_plugin_skill_discovery",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "non-interactive skill enumeration not exposed",
+      "expected_value": "Orbit skills discoverable in installed plugin payload",
+      "failure_reason": "",
+      "blocker_reason": "Skill discovery is internal to the agent loop and not exposed via CLI flag",
+      "manual_verification_command": "claude\nthen invoke a skill trigger phrase like 'audit this project for gaps'",
+      "notes": ""
+    },
+    {
+      "check_name": "installed_plugin_hook_configuration",
+      "status": "BLOCKED",
+      "evidence_path": "",
+      "observed_value": "no enumerator for installed-plugin hook config",
+      "expected_value": "Orbit hooks loaded by Claude Code",
+      "failure_reason": "",
+      "blocker_reason": "hook activation is internal to the running agent",
+      "manual_verification_command": "cat ~/.claude/plugins/installed_plugins.json | grep -i orbit ; cat ~/.claude/settings.json | grep -i hooks",
+      "notes": ""
+    },
+    {
+      "check_name": "static_validator_manifest",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/static-manifest.json",
+      "observed_value": "returncode=0 status=PASS",
+      "expected_value": "status=PASS",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "static_validator_frontmatter",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/static-frontmatter.json",
+      "observed_value": "returncode=0 status=PASS",
+      "expected_value": "status=PASS",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "static_validator_commands",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/static-commands.json",
+      "observed_value": "returncode=0 status=PASS",
+      "expected_value": "status=PASS",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "static_validator_hooks",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/static-hooks.json",
+      "observed_value": "returncode=0 status=PASS",
+      "expected_value": "status=PASS",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "static_validator_outputs",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/static-outputs.json",
+      "observed_value": "returncode=0 status=PASS",
+      "expected_value": "status=PASS",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "skill_creator_review_gap-analysis",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+      "observed_value": "overall=5.0 matched_triggers=5 improvements=0",
+      "expected_value": "overall >= 4.0 and no improvement actions outstanding",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "skill_creator_review_instruction-ledger",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+      "observed_value": "overall=5.0 matched_triggers=5 improvements=0",
+      "expected_value": "overall >= 4.0 and no improvement actions outstanding",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "skill_creator_review_plan-execution-audit",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+      "observed_value": "overall=5.0 matched_triggers=4 improvements=0",
+      "expected_value": "overall >= 4.0 and no improvement actions outstanding",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "skill_creator_review_validation-pairing",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+      "observed_value": "overall=5.0 matched_triggers=4 improvements=0",
+      "expected_value": "overall >= 4.0 and no improvement actions outstanding",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_README.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/README.md",
+      "observed_value": "size=2272",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_install.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/install.md",
+      "observed_value": "size=2225",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_usage.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/usage.md",
+      "observed_value": "size=2036",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_commands.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/commands.md",
+      "observed_value": "size=1830",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_hooks.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/hooks.md",
+      "observed_value": "size=2213",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_skills.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/skills.md",
+      "observed_value": "size=2015",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_evidence-model.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/evidence-model.md",
+      "observed_value": "size=3091",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_validation.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/validation.md",
+      "observed_value": "size=1988",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_sdk-harness.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/sdk-harness.md",
+      "observed_value": "size=3160",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_scenarios.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/scenarios.md",
+      "observed_value": "size=2077",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_dashboard.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/dashboard.md",
+      "observed_value": "size=1918",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_reports.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/reports.md",
+      "observed_value": "size=1923",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_compliance.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/compliance.md",
+      "observed_value": "size=1667",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_plugin-validation.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/plugin-validation.md",
+      "observed_value": "size=2261",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_skill-creator-review.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/skill-creator-review.md",
+      "observed_value": "size=1932",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_troubleshooting.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/troubleshooting.md",
+      "observed_value": "size=2475",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_diagrams.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams.md",
+      "observed_value": "size=1757",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_validation-research.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/validation-research.md",
+      "observed_value": "size=2998",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_architecture.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/architecture.md",
+      "observed_value": "size=3335",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_md_installed-plugin-validation.md",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/installed-plugin-validation.md",
+      "observed_value": "size=1974",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_index.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/index.html",
+      "observed_value": "size=7794",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_install.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/install.html",
+      "observed_value": "size=7215",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_usage.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/usage.html",
+      "observed_value": "size=6940",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_commands.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/commands.html",
+      "observed_value": "size=7437",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_hooks.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/hooks.html",
+      "observed_value": "size=7663",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_skills.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/skills.html",
+      "observed_value": "size=7326",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_evidence-model.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/evidence-model.html",
+      "observed_value": "size=9460",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_validation.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/validation.html",
+      "observed_value": "size=7176",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_sdk-harness.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/sdk-harness.html",
+      "observed_value": "size=8332",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_scenarios.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/scenarios.html",
+      "observed_value": "size=7517",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_dashboard.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/dashboard.html",
+      "observed_value": "size=7040",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_reports.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/reports.html",
+      "observed_value": "size=7278",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_compliance.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/compliance.html",
+      "observed_value": "size=6836",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_plugin-validation.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/plugin-validation.html",
+      "observed_value": "size=7733",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_skill-creator-review.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/skill-creator-review.html",
+      "observed_value": "size=7395",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_troubleshooting.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/troubleshooting.html",
+      "observed_value": "size=7923",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_diagrams.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/diagrams.html",
+      "observed_value": "size=7175",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_validation-research.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/validation-research.html",
+      "observed_value": "size=8776",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_architecture.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/architecture.html",
+      "observed_value": "size=9408",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "doc_html_installed-plugin-validation.html",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs-html/installed-plugin-validation.html",
+      "observed_value": "size=7334",
+      "expected_value": "exists and non-empty",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_orbit-system-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/orbit-system-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_evidence-pipeline.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/evidence-pipeline.mmd",
+      "observed_value": "first_line=flowchart lr",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_intent-to-gap-model.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/intent-to-gap-model.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_sdk-harness-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/sdk-harness-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_plugin-compliance-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/plugin-compliance-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_review-window-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/review-window-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_hook-candidate-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/hook-candidate-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_claim-validation-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/claim-validation-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_dashboard-output-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/dashboard-output-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_installed-plugin-validation-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/installed-plugin-validation-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "diagram_local-architecture-discovery-flow.mmd",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/docs/diagrams/local-architecture-discovery-flow.mmd",
+      "observed_value": "first_line=flowchart td",
+      "expected_value": "begins with one of ('flowchart', 'graph', 'sequencediagram', 'statediagram', 'classdiagram', 'timeline', 'journey', 'gantt', 'erdiagram', 'pie', 'mindmap')",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_00-architecture-discovery",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/transcript.json",
+      "observed_value": "got_result=True msgs=58",
+      "expected_value": "ResultMessage in transcript.json",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_01-plan-gap",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_02-correction-supersedes",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_03-claim-unverified",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_04-claim-contradicted",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/transcript.json",
+      "observed_value": "got_result=True msgs=34",
+      "expected_value": "ResultMessage in transcript.json",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_05-dashboard-required",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_06-review-window-days7",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/transcript.json",
+      "observed_value": "got_result=True msgs=40",
+      "expected_value": "ResultMessage in transcript.json",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_06-review-window-since",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/transcript.json",
+      "observed_value": "got_result=True msgs=43",
+      "expected_value": "ResultMessage in transcript.json",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_06-review-window-from-to",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/transcript.json",
+      "observed_value": "got_result=True msgs=38",
+      "expected_value": "ResultMessage in transcript.json",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_07-hook-candidate",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_08-malformed-jsonl",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/transcript.json",
+      "observed_value": "got_result=True msgs=34",
+      "expected_value": "ResultMessage in transcript.json",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_09-instruction-ledger",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_10-plugin-compliance",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_11-skill-creator-review",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_12-docs-completeness",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness",
+      "observed_value": "returncode=0 got_result=True",
+      "expected_value": "returncode=0 and ResultMessage in transcript",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "sdk_scenario_13-installed-plugin",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/transcript.json",
+      "observed_value": "got_result=True msgs=45",
+      "expected_value": "ResultMessage in transcript.json",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_sample_evidence_present",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/examples/sample-evidence.json",
+      "observed_value": "present",
+      "expected_value": "present",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_render_returncode",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "returncode=0",
+      "expected_value": "returncode=0",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token_ORBIT",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains 'ORBIT'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token_Find_drift",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains 'Find drift'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token__C6FF00",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains '#C6FF00'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token__FF8A00",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains '#FF8A00'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token__FF4D36",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains '#FF4D36'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token__8B3DFF",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains '#8B3DFF'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token__1E6BFF",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains '#1E6BFF'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token_Timeline",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains 'Timeline'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token_Claim_Validation",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains 'Claim Validation'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token_Uncertainty",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains 'Uncertainty'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token_Scope",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains 'Scope'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    },
+    {
+      "check_name": "dashboard_token_Matrix",
+      "status": "PASS",
+      "evidence_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/reports/evidence/dashboard-verified.html",
+      "observed_value": "present",
+      "expected_value": "contains 'Matrix'",
+      "failure_reason": "",
+      "blocker_reason": "",
+      "manual_verification_command": "",
+      "notes": ""
+    }
+  ],
+  "architecture_layout": {
+    "plugin_root": "/Users/nick/Desktop/orbit",
+    "exists": true,
+    "manifest": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+    "skills_dir": "/Users/nick/Desktop/orbit/skills",
+    "commands_dir": "/Users/nick/Desktop/orbit/commands",
+    "hooks_dir": "/Users/nick/Desktop/orbit/hooks",
+    "scripts_dir": "/Users/nick/Desktop/orbit/scripts",
+    "bin_dir": "/Users/nick/Desktop/orbit/bin",
+    "skills": [
+      {
+        "name": "gap-analysis",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md"
+      },
+      {
+        "name": "instruction-ledger",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md"
+      },
+      {
+        "name": "plan-execution-audit",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md"
+      },
+      {
+        "name": "validation-pairing",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md"
+      }
+    ],
+    "commands": [
+      {
+        "name": "audit-gaps",
+        "path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md"
+      },
+      {
+        "name": "compare-plan",
+        "path": "/Users/nick/Desktop/orbit/commands/compare-plan.md"
+      },
+      {
+        "name": "mine-intent",
+        "path": "/Users/nick/Desktop/orbit/commands/mine-intent.md"
+      },
+      {
+        "name": "rebuild-ledger",
+        "path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md"
+      },
+      {
+        "name": "render-dashboard",
+        "path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md"
+      },
+      {
+        "name": "review-last-3-days",
+        "path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md"
+      },
+      {
+        "name": "review-window",
+        "path": "/Users/nick/Desktop/orbit/commands/review-window.md"
+      },
+      {
+        "name": "validate-claims",
+        "path": "/Users/nick/Desktop/orbit/commands/validate-claims.md"
+      }
+    ],
+    "hooks_file": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+    "scripts": [
+      "/Users/nick/Desktop/orbit/scripts/hook_instruction_detector.py",
+      "/Users/nick/Desktop/orbit/scripts/hook_prompt_context.py",
+      "/Users/nick/Desktop/orbit/scripts/orbit_audit.py"
+    ],
+    "bin": [
+      {
+        "name": "orbit-audit",
+        "path": "/Users/nick/Desktop/orbit/bin/orbit-audit",
+        "executable": true
+      },
+      {
+        "name": "orbit-dashboard",
+        "path": "/Users/nick/Desktop/orbit/bin/orbit-dashboard",
+        "executable": true
+      },
+      {
+        "name": "orbit-ledger",
+        "path": "/Users/nick/Desktop/orbit/bin/orbit-ledger",
+        "executable": true
+      }
+    ],
+    "readme": "/Users/nick/Desktop/orbit/README.md",
+    "changelog": "/Users/nick/Desktop/orbit/CHANGELOG.md",
+    "prd": "/Users/nick/Desktop/orbit/PRD.md",
+    "claude_md": "/Users/nick/Desktop/orbit/CLAUDE.md",
+    "tests_dir": "/Users/nick/Desktop/orbit/tests",
+    "examples_dir": "/Users/nick/Desktop/orbit/examples"
+  },
+  "docs_facts": {
+    "claude-agent-sdk": [
+      "installed at /Users/nick/Library/Python/3.12/lib/python/site-packages/claude_agent_sdk",
+      "version 0.1.68",
+      "exports query() and ClaudeAgentOptions (verified by import)",
+      "ClaudeAgentOptions accepts setting_sources for subscription auth (per harness usage in this repo)",
+      "ResultMessage marks substantive completion of a query() stream (per Crucible reference harness)"
+    ],
+    "claude-code-plugin-manifest": [
+      "manifest path is .claude-plugin/plugin.json (observed at /Users/nick/Desktop/orbit/.claude-plugin/plugin.json)",
+      "required key 'name' present: yes",
+      "recognized sub-paths in this manifest: ['commands', 'hooks', 'skills']",
+      "manifest 'hooks' field points at hooks/hooks.json (observed in this manifest)",
+      "manifest 'skills' and 'commands' fields are directory references relative to plugin root"
+    ],
+    "claude-code-hooks-io": [
+      "hooks.json contains events: ['UserPromptExpansion', 'UserPromptSubmit']",
+      "hooks read JSON payload from stdin and exit 0 on success (observed in scripts/hook_*.py)",
+      "hooks may emit JSON on stdout under hookSpecificOutput.additionalContext (observed in hook_prompt_context.py)",
+      "blocking patterns ({decision: 'block'} or 'approve') are deprecated; Orbit uses additionalContext for non-blocking hints",
+      "available hook scripts: ['hook_prompt_context.py', 'hook_instruction_detector.py']"
+    ],
+    "claude-code-skill-frontmatter": [
+      "observed 4 SKILL.md files",
+      "each begins with --- ... --- YAML frontmatter (verified by file inspection)",
+      "frontmatter declares 'name' and 'description' keys (verified by validate_skill_frontmatter.py)",
+      "name pattern is lowercase letters, digits, hyphens only; max 64 chars (enforced by validator)",
+      "description is plain text, no XML tags, max 1024 chars (enforced by validator)"
+    ],
+    "claude-code-slash-commands": [
+      "observed 8 command markdown files",
+      "each command file is a markdown document; filename is the slash command stem (e.g. audit-gaps.md => /orbit:audit-gaps)",
+      "file content is the body of the slash command (heading + usage examples)",
+      "Orbit commands suggest helper invocations using fenced code blocks (verified by validate_commands.py)",
+      "no front matter is required for slash commands in Claude Code (observed in Orbit's command files)"
+    ]
+  },
+  "scenario_summaries": [
+    {
+      "scenario_id": "00-architecture-discovery",
+      "summary": {
+        "label": "00-architecture-discovery",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery",
+        "prompt_chars": 349,
+        "transcript_msg_count": 58,
+        "got_result_message": true,
+        "exception": "Exception: Command failed with exit code 1 (exit code: 1)\nError output: Check stderr output for details",
+        "session_id": "225a7867-9c8c-4a7e-b9f5-213de726ae7f",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T204945Z-00-architecture-discovery/debug.log"
+      }
+    },
+    {
+      "scenario_id": "01-plan-gap",
+      "summary": {
+        "label": "01-plan-gap",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap",
+        "prompt_chars": 494,
+        "transcript_msg_count": 42,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "fb671514-51ea-4c1a-b963-5413c7e42a07",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205031Z-01-plan-gap/debug.log",
+        "_runner": "sdk_orbit_audit_gaps.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:50:31Z] run start: 20260505T205031Z-01-plan-gap\n[2026-05-05T20:51:09Z] run done: 20260505T205031Z-01-plan-gap got_result=True msgs=42\n"
+      }
+    },
+    {
+      "scenario_id": "02-correction-supersedes",
+      "summary": {
+        "label": "02-correction-supersedes",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes",
+        "prompt_chars": 501,
+        "transcript_msg_count": 31,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "8a47e9c7-1880-4a68-b289-b59987e1772b",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205110Z-02-correction-supersedes/debug.log",
+        "_runner": "sdk_orbit_compare_plan.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:51:10Z] run start: 20260505T205110Z-02-correction-supersedes\n[2026-05-05T20:51:25Z] run done: 20260505T205110Z-02-correction-supersedes got_result=True msgs=31\n"
+      }
+    },
+    {
+      "scenario_id": "03-claim-unverified",
+      "summary": {
+        "label": "03-claim-unverified",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified",
+        "prompt_chars": 445,
+        "transcript_msg_count": 31,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "c9715000-2cab-4a5e-80ad-e52206b43edb",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205126Z-03-claim-unverified/debug.log",
+        "_runner": "sdk_orbit_validate_claims.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:51:26Z] run start: 20260505T205126Z-03-claim-unverified\n[2026-05-05T20:51:48Z] run done: 20260505T205126Z-03-claim-unverified got_result=True msgs=31\n"
+      }
+    },
+    {
+      "scenario_id": "04-claim-contradicted",
+      "summary": {
+        "label": "04-claim-contradicted",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted",
+        "prompt_chars": 271,
+        "transcript_msg_count": 34,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "ba315ecd-d064-4643-ba61-3e0528e4200c",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205148Z-04-claim-contradicted/debug.log"
+      }
+    },
+    {
+      "scenario_id": "05-dashboard-required",
+      "summary": {
+        "label": "05-dashboard-required",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required",
+        "prompt_chars": 475,
+        "transcript_msg_count": 31,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "7a76ef16-a586-43c9-8f4c-1a6d00417978",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/debug.log",
+        "dashboard_render_returncode": 0,
+        "dashboard_target": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205207Z-05-dashboard-required/rendered-dashboard.html",
+        "dashboard_tokens_all_present": true,
+        "_runner": "sdk_orbit_render_dashboard.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:52:07Z] run start: 20260505T205207Z-05-dashboard-required\n[2026-05-05T20:52:24Z] run done: 20260505T205207Z-05-dashboard-required got_result=True msgs=31\n"
+      }
+    },
+    {
+      "scenario_id": "06-review-window-days7",
+      "summary": {
+        "label": "06-review-window-days7",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7",
+        "prompt_chars": 228,
+        "transcript_msg_count": 40,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "a911a777-1b12-4ac4-ad2d-c4299aa2ad79",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205224Z-06-review-window-days7/debug.log"
+      }
+    },
+    {
+      "scenario_id": "06-review-window-since",
+      "summary": {
+        "label": "06-review-window-since",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since",
+        "prompt_chars": 238,
+        "transcript_msg_count": 43,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "30ec1890-034b-46ca-9d6d-141f389f254c",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205311Z-06-review-window-since/debug.log"
+      }
+    },
+    {
+      "scenario_id": "06-review-window-from-to",
+      "summary": {
+        "label": "06-review-window-from-to",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to",
+        "prompt_chars": 253,
+        "transcript_msg_count": 38,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "891c8719-080c-4b38-9f25-05fe22912d9e",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205412Z-06-review-window-from-to/debug.log"
+      }
+    },
+    {
+      "scenario_id": "07-hook-candidate",
+      "summary": {
+        "label": "07-hook-candidate",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate",
+        "prompt_chars": 349,
+        "transcript_msg_count": 38,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "70a926e1-70b5-45bf-9ab1-1a2945b5087c",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/debug.log",
+        "hook_invocation_count": 4,
+        "hook_candidate_records": 4,
+        "hook_candidate_file": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205520Z-07-hook-candidate/orbit-hook-tot607rk/intent-ledger-candidates.jsonl",
+        "_runner": "sdk_orbit_hook_candidate.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:55:20Z] run start: 20260505T205520Z-07-hook-candidate\n[2026-05-05T20:55:57Z] run done: 20260505T205520Z-07-hook-candidate got_result=True msgs=38\n"
+      }
+    },
+    {
+      "scenario_id": "08-malformed-jsonl",
+      "summary": {
+        "label": "08-malformed-jsonl",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl",
+        "prompt_chars": 221,
+        "transcript_msg_count": 34,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "e0418136-7e7e-4a76-ae93-3d1b8e2a89d6",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205557Z-08-malformed-jsonl/debug.log"
+      }
+    },
+    {
+      "scenario_id": "09-instruction-ledger",
+      "summary": {
+        "label": "09-instruction-ledger",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger",
+        "prompt_chars": 327,
+        "transcript_msg_count": 32,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "f02052f3-78ec-49cd-881c-67376fd95d8d",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/debug.log",
+        "ledger_jsonl": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/intent-ledger.jsonl",
+        "ledger_jsonl_valid_lines": 3,
+        "ledger_jsonl_invalid_lines": 0,
+        "ledger_md": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205625Z-09-instruction-ledger/intent-ledger.md",
+        "ledger_md_present": true,
+        "_runner": "sdk_orbit_mine_intent.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:56:25Z] run start: 20260505T205625Z-09-instruction-ledger\n[2026-05-05T20:56:47Z] run done: 20260505T205625Z-09-instruction-ledger got_result=True msgs=32\n"
+      }
+    },
+    {
+      "scenario_id": "10-plugin-compliance",
+      "summary": {
+        "label": "10-plugin-compliance",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance",
+        "prompt_chars": 359,
+        "transcript_msg_count": 31,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "d9d28027-b0b2-4b06-bb51-23e05d7b0a86",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205647Z-10-plugin-compliance/debug.log",
+        "static_validators": {
+          "manifest": "PASS",
+          "frontmatter": "PASS",
+          "commands": "PASS",
+          "hooks": "PASS",
+          "outputs": "PASS"
+        },
+        "static_validators_all_pass": true,
+        "_runner": "sdk_orbit_plugin_compliance.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:56:47Z] run start: 20260505T205647Z-10-plugin-compliance\n[2026-05-05T20:56:59Z] run done: 20260505T205647Z-10-plugin-compliance got_result=True msgs=31\n"
+      }
+    },
+    {
+      "scenario_id": "11-skill-creator-review",
+      "summary": {
+        "label": "11-skill-creator-review",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review",
+        "prompt_chars": 409,
+        "transcript_msg_count": 32,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "a1c2660b-690d-4352-9c5b-ba218c7146bb",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205700Z-11-skill-creator-review/debug.log",
+        "skill_reviews": [
+          {
+            "name": "gap-analysis",
+            "overall": 5.0,
+            "improvements": 0
+          },
+          {
+            "name": "instruction-ledger",
+            "overall": 5.0,
+            "improvements": 0
+          },
+          {
+            "name": "plan-execution-audit",
+            "overall": 5.0,
+            "improvements": 0
+          },
+          {
+            "name": "validation-pairing",
+            "overall": 4.6,
+            "improvements": 0
+          }
+        ],
+        "skill_creator_all_pass": true,
+        "_runner": "sdk_orbit_skill_compliance.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:57:00Z] run start: 20260505T205700Z-11-skill-creator-review\n[2026-05-05T20:57:16Z] run done: 20260505T205700Z-11-skill-creator-review got_result=True msgs=32\n"
+      }
+    },
+    {
+      "scenario_id": "12-docs-completeness",
+      "summary": {
+        "label": "12-docs-completeness",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness",
+        "prompt_chars": 665,
+        "transcript_msg_count": 46,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "fba41ab2-5056-4e6c-99e8-d8fd05b0906d",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205717Z-12-docs-completeness/debug.log",
+        "docs_all_present": true,
+        "docs_md_missing": [],
+        "docs_html_missing": [],
+        "docs_diagrams_missing": [],
+        "_runner": "sdk_orbit_docs_compliance.py",
+        "_returncode": 0,
+        "_stderr_tail": "[2026-05-05T20:57:17Z] run start: 20260505T205717Z-12-docs-completeness\n[2026-05-05T20:58:00Z] run done: 20260505T205717Z-12-docs-completeness got_result=True msgs=46\n"
+      }
+    },
+    {
+      "scenario_id": "13-installed-plugin",
+      "summary": {
+        "label": "13-installed-plugin",
+        "run_dir": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin",
+        "prompt_chars": 320,
+        "transcript_msg_count": 45,
+        "got_result_message": true,
+        "exception": null,
+        "session_id": "29e1c966-9e3c-4095-bca6-7edbf2d1713f",
+        "jsonl_pointer": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/jsonl-pointer.txt",
+        "transcript_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/transcript.json",
+        "summary_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/summary.json",
+        "started_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/started-at.txt",
+        "finished_at_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/finished-at.txt",
+        "debug_log_path": "/Users/nick/Desktop/orbit/.orbit-sdk-harness/runs/20260505T205800Z-13-installed-plugin/debug.log"
+      }
+    }
+  ],
+  "static_validator_payloads": {
+    "manifest": {
+      "plugin_root": "/Users/nick/Desktop/orbit",
+      "manifest_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+      "checks": [
+        {
+          "check_name": "manifest_exists",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "manifest_parses",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+          "observed_value": "valid JSON object",
+          "expected_value": "valid JSON object"
+        },
+        {
+          "check_name": "manifest_name_present",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+          "observed_value": "orbit",
+          "expected_value": "non-empty string"
+        },
+        {
+          "check_name": "manifest_name_orbit",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+          "observed_value": "orbit",
+          "expected_value": "orbit"
+        },
+        {
+          "check_name": "manifest_version_present",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+          "observed_value": "0.2.0",
+          "expected_value": "non-empty string"
+        },
+        {
+          "check_name": "manifest_description_present",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/.claude-plugin/plugin.json",
+          "observed_value": "present",
+          "expected_value": "non-empty string"
+        },
+        {
+          "check_name": "manifest_path_skills",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/skills",
+          "observed_value": "/Users/nick/Desktop/orbit/skills",
+          "expected_value": "path exists"
+        },
+        {
+          "check_name": "manifest_path_commands",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands",
+          "observed_value": "/Users/nick/Desktop/orbit/commands",
+          "expected_value": "path exists"
+        },
+        {
+          "check_name": "manifest_path_hooks",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+          "observed_value": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+          "expected_value": "path exists"
+        }
+      ],
+      "status": "PASS",
+      "_returncode": 0
+    },
+    "frontmatter": {
+      "skills_dir": "/Users/nick/Desktop/orbit/skills",
+      "skills": [
+        {
+          "name": "gap-analysis",
+          "skill_md": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+          "status": "PASS",
+          "checks": [
+            {
+              "check_name": "frontmatter_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+              "observed_value": "parsed",
+              "expected_value": "--- ... --- block at top of file"
+            },
+            {
+              "check_name": "frontmatter_name_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+              "observed_value": "gap-analysis",
+              "expected_value": "present"
+            },
+            {
+              "check_name": "frontmatter_name_format",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+              "observed_value": "gap-analysis",
+              "expected_value": "^[a-z0-9-]+$ and <=64 chars"
+            },
+            {
+              "check_name": "frontmatter_description_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+              "observed_value": "len=343",
+              "expected_value": "non-empty string"
+            },
+            {
+              "check_name": "frontmatter_description_no_xml",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+              "observed_value": "no XML tags",
+              "expected_value": "no XML tags"
+            },
+            {
+              "check_name": "frontmatter_description_length",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+              "observed_value": "len=343",
+              "expected_value": "<= 1024"
+            },
+            {
+              "check_name": "body_non_empty",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+              "observed_value": "body_chars=1975",
+              "expected_value": "non-empty body"
+            }
+          ]
+        },
+        {
+          "name": "instruction-ledger",
+          "skill_md": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+          "status": "PASS",
+          "checks": [
+            {
+              "check_name": "frontmatter_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+              "observed_value": "parsed",
+              "expected_value": "--- ... --- block at top of file"
+            },
+            {
+              "check_name": "frontmatter_name_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+              "observed_value": "instruction-ledger",
+              "expected_value": "present"
+            },
+            {
+              "check_name": "frontmatter_name_format",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+              "observed_value": "instruction-ledger",
+              "expected_value": "^[a-z0-9-]+$ and <=64 chars"
+            },
+            {
+              "check_name": "frontmatter_description_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+              "observed_value": "len=234",
+              "expected_value": "non-empty string"
+            },
+            {
+              "check_name": "frontmatter_description_no_xml",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+              "observed_value": "no XML tags",
+              "expected_value": "no XML tags"
+            },
+            {
+              "check_name": "frontmatter_description_length",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+              "observed_value": "len=234",
+              "expected_value": "<= 1024"
+            },
+            {
+              "check_name": "body_non_empty",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+              "observed_value": "body_chars=655",
+              "expected_value": "non-empty body"
+            }
+          ]
+        },
+        {
+          "name": "plan-execution-audit",
+          "skill_md": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+          "status": "PASS",
+          "checks": [
+            {
+              "check_name": "frontmatter_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+              "observed_value": "parsed",
+              "expected_value": "--- ... --- block at top of file"
+            },
+            {
+              "check_name": "frontmatter_name_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+              "observed_value": "plan-execution-audit",
+              "expected_value": "present"
+            },
+            {
+              "check_name": "frontmatter_name_format",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+              "observed_value": "plan-execution-audit",
+              "expected_value": "^[a-z0-9-]+$ and <=64 chars"
+            },
+            {
+              "check_name": "frontmatter_description_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+              "observed_value": "len=234",
+              "expected_value": "non-empty string"
+            },
+            {
+              "check_name": "frontmatter_description_no_xml",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+              "observed_value": "no XML tags",
+              "expected_value": "no XML tags"
+            },
+            {
+              "check_name": "frontmatter_description_length",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+              "observed_value": "len=234",
+              "expected_value": "<= 1024"
+            },
+            {
+              "check_name": "body_non_empty",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+              "observed_value": "body_chars=570",
+              "expected_value": "non-empty body"
+            }
+          ]
+        },
+        {
+          "name": "validation-pairing",
+          "skill_md": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+          "status": "PASS",
+          "checks": [
+            {
+              "check_name": "frontmatter_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+              "observed_value": "parsed",
+              "expected_value": "--- ... --- block at top of file"
+            },
+            {
+              "check_name": "frontmatter_name_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+              "observed_value": "validation-pairing",
+              "expected_value": "present"
+            },
+            {
+              "check_name": "frontmatter_name_format",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+              "observed_value": "validation-pairing",
+              "expected_value": "^[a-z0-9-]+$ and <=64 chars"
+            },
+            {
+              "check_name": "frontmatter_description_present",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+              "observed_value": "len=224",
+              "expected_value": "non-empty string"
+            },
+            {
+              "check_name": "frontmatter_description_no_xml",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+              "observed_value": "no XML tags",
+              "expected_value": "no XML tags"
+            },
+            {
+              "check_name": "frontmatter_description_length",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+              "observed_value": "len=224",
+              "expected_value": "<= 1024"
+            },
+            {
+              "check_name": "body_non_empty",
+              "status": "PASS",
+              "evidence_path": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+              "observed_value": "body_chars=618",
+              "expected_value": "non-empty body"
+            }
+          ]
+        }
+      ],
+      "status": "PASS",
+      "_returncode": 0
+    },
+    "commands": {
+      "plugin_root": "/Users/nick/Desktop/orbit",
+      "commands_dir": "/Users/nick/Desktop/orbit/commands",
+      "checks": [
+        {
+          "check_name": "commands_dir_present",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_present_audit-gaps",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_audit-gaps",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
+          "observed_value": "chars=307",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_audit-gaps",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_audit-gaps",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
+          "observed_value": "fenced_blocks=1",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_audit-gaps",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/audit-gaps.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_present_mine-intent",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/mine-intent.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_mine-intent",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/mine-intent.md",
+          "observed_value": "chars=186",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_mine-intent",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/mine-intent.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_mine-intent",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/mine-intent.md",
+          "observed_value": "fenced_blocks=1",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_mine-intent",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/mine-intent.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_present_validate-claims",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/validate-claims.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_validate-claims",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/validate-claims.md",
+          "observed_value": "chars=220",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_validate-claims",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/validate-claims.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_validate-claims",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/validate-claims.md",
+          "observed_value": "fenced_blocks=1",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_validate-claims",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/validate-claims.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_present_render-dashboard",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_render-dashboard",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md",
+          "observed_value": "chars=187",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_render-dashboard",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_render-dashboard",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md",
+          "observed_value": "fenced_blocks=1",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_render-dashboard",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/render-dashboard.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_present_compare-plan",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/compare-plan.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_compare-plan",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/compare-plan.md",
+          "observed_value": "chars=218",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_compare-plan",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/compare-plan.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_compare-plan",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/compare-plan.md",
+          "observed_value": "fenced_blocks=1",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_compare-plan",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/compare-plan.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_present_review-window",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_review-window",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "chars=437",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_review-window",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_review-window",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "fenced_blocks=2",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_review-window",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "review_window_documents_days",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "present",
+          "expected_value": "--days documented",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "review_window_documents_since",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "present",
+          "expected_value": "--since documented",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "review_window_documents_from",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "present",
+          "expected_value": "--from documented",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "review_window_documents_to",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-window.md",
+          "observed_value": "present",
+          "expected_value": "--to documented",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_present_review-last-3-days",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_review-last-3-days",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
+          "observed_value": "chars=185",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_review-last-3-days",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_review-last-3-days",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
+          "observed_value": "fenced_blocks=2",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_review-last-3-days",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "review_last_3_days_alias",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/review-last-3-days.md",
+          "observed_value": "alias documented",
+          "expected_value": "documents alias for --days 3",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_present_rebuild-ledger",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "command_body_non_empty_rebuild-ledger",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md",
+          "observed_value": "chars=181",
+          "expected_value": "non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_purpose_heading_rebuild-ledger",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md",
+          "observed_value": "heading present",
+          "expected_value": "markdown heading present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_has_example_rebuild-ledger",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md",
+          "observed_value": "fenced_blocks=1",
+          "expected_value": ">=1 fenced example block",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "command_maps_to_workflow_rebuild-ledger",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/commands/rebuild-ledger.md",
+          "observed_value": "mentions orbit-audit or skill",
+          "expected_value": "mentions orbit-audit or skill",
+          "failure_reason": ""
+        }
+      ],
+      "status": "PASS",
+      "_returncode": 0
+    },
+    "hooks": {
+      "plugin_root": "/Users/nick/Desktop/orbit",
+      "hooks_file": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+      "checks": [
+        {
+          "check_name": "hooks_file_present",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "hooks_file_parses",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+          "observed_value": "valid JSON",
+          "expected_value": "valid JSON"
+        },
+        {
+          "check_name": "hooks_section_present",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+          "observed_value": "2 events",
+          "expected_value": "non-empty 'hooks' object"
+        },
+        {
+          "check_name": "event_recognized_UserPromptSubmit",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+          "observed_value": "UserPromptSubmit",
+          "expected_value": "known event"
+        },
+        {
+          "check_name": "hook_command_exists_UserPromptSubmit_0_0",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/scripts/hook_instruction_detector.py",
+          "observed_value": "present",
+          "expected_value": "present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "hook_command_executable_UserPromptSubmit_0_0",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/scripts/hook_instruction_detector.py",
+          "observed_value": "executable",
+          "expected_value": "executable",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "hook_command_smoke_UserPromptSubmit_0_0",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/scripts/hook_instruction_detector.py",
+          "observed_value": "exit=0 stdout_chars=0",
+          "expected_value": "exit 0 with optional stdout JSON",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "event_recognized_UserPromptExpansion",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/hooks/hooks.json",
+          "observed_value": "UserPromptExpansion",
+          "expected_value": "known event"
+        },
+        {
+          "check_name": "hook_command_exists_UserPromptExpansion_0_0",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/scripts/hook_prompt_context.py",
+          "observed_value": "present",
+          "expected_value": "present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "hook_command_executable_UserPromptExpansion_0_0",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/scripts/hook_prompt_context.py",
+          "observed_value": "executable",
+          "expected_value": "executable",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "hook_command_smoke_UserPromptExpansion_0_0",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/scripts/hook_prompt_context.py",
+          "observed_value": "exit=0 stdout_chars=341",
+          "expected_value": "exit 0 with optional stdout JSON",
+          "failure_reason": ""
+        }
+      ],
+      "status": "PASS",
+      "_returncode": 0
+    },
+    "outputs": {
+      "plugin_root": "/Users/nick/Desktop/orbit",
+      "checks": [
+        {
+          "check_name": "fixture_present_sample-repo",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/tests/fixtures/sample-repo",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "fixture_present_sample-session.jsonl",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/tests/fixtures/sample-session.jsonl",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "fixture_present_sample-plan.md",
+          "status": "PASS",
+          "evidence_path": "/Users/nick/Desktop/orbit/tests/fixtures/sample-plan.md",
+          "observed_value": "present",
+          "expected_value": "present"
+        },
+        {
+          "check_name": "audit_subcommand_exit_zero",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit",
+          "observed_value": "returncode=0",
+          "expected_value": "returncode=0",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "audit_artifact_evidence.json",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "size=8476",
+          "expected_value": "exists and non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "audit_artifact_gap-analysis.md",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/gap-analysis.md",
+          "observed_value": "size=1499",
+          "expected_value": "exists and non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "audit_artifact_dashboard.html",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "size=7473",
+          "expected_value": "exists and non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "audit_artifact_intent-gap-flow.mmd",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/intent-gap-flow.mmd",
+          "observed_value": "size=505",
+          "expected_value": "exists and non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "audit_artifact_intent-timeline.mmd",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/intent-timeline.mmd",
+          "observed_value": "size=206",
+          "expected_value": "exists and non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "audit_artifact_plan-execution-matrix.csv",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/plan-execution-matrix.csv",
+          "observed_value": "size=565",
+          "expected_value": "exists and non-empty",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_schema_version",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "schema_version present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_generated_at",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "generated_at present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_scope",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "scope present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_intents",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "intents present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_plan_items",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "plan_items present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_claims",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "claims present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_tool_evidence",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "tool_evidence present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_validations",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "validations present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_field_gaps",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "present",
+          "expected_value": "gaps present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "evidence_scope_days_echo",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/evidence.json",
+          "observed_value": "30",
+          "expected_value": "30",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_ORBIT",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'ORBIT'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Find_drift",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Find drift'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_hexC6FF00",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains '#C6FF00'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_hexFF8A00",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains '#FF8A00'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_hexFF4D36",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains '#FF4D36'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_hex8B3DFF",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains '#8B3DFF'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_hex1E6BFF",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains '#1E6BFF'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Intents",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Intents'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Plan",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Plan'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Claim",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Claim'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Tool",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Tool'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Gaps",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Gaps'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Timeline",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Timeline'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Uncertainty",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Uncertainty'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "dashboard_token_Scope",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/audit/dashboard.html",
+          "observed_value": "present",
+          "expected_value": "contains 'Scope'",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "build_ledger_exit_zero",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/intent-ledger.jsonl",
+          "observed_value": "returncode=0",
+          "expected_value": "returncode=0",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "ledger_lines_valid_json",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/intent-ledger.jsonl",
+          "observed_value": "valid_lines=3 all_valid=True",
+          "expected_value": "all lines parse as JSON, count>=1",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "ledger_md_companion",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/intent-ledger.md",
+          "observed_value": "present",
+          "expected_value": "markdown companion present",
+          "failure_reason": ""
+        },
+        {
+          "check_name": "render_dashboard_exit_zero",
+          "status": "PASS",
+          "evidence_path": "/var/folders/x9/t9mpdpkn4wn6mj59k7b48l9w0000gn/T/orbit-smoke-exi1b3o0/rendered.html",
+          "observed_value": "returncode=0",
+          "expected_value": "returncode=0",
+          "failure_reason": ""
+        }
+      ],
+      "status": "PASS",
+      "_returncode": 0
+    }
+  },
+  "skill_creator_payload": {
+    "reviews": [
+      {
+        "name": "gap-analysis",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/gap-analysis/SKILL.md",
+        "description_chars": 343,
+        "triggers_matched": [
+          "audit",
+          "review-window",
+          "what did we miss",
+          "gap analysis",
+          "compare to the plan"
+        ],
+        "scoring": {
+          "trigger_accuracy": 5,
+          "clarity": 5,
+          "scope_fit": 5,
+          "frontmatter_compliance": 5,
+          "operational_completeness": 5,
+          "overall": 5.0
+        },
+        "improvements": []
+      },
+      {
+        "name": "instruction-ledger",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/instruction-ledger/SKILL.md",
+        "description_chars": 234,
+        "triggers_matched": [
+          "ledger",
+          "rebuild the ledger",
+          "what did i tell you",
+          "project memory",
+          "corrections"
+        ],
+        "scoring": {
+          "trigger_accuracy": 5,
+          "clarity": 5,
+          "scope_fit": 5,
+          "frontmatter_compliance": 5,
+          "operational_completeness": 5,
+          "overall": 5.0
+        },
+        "improvements": []
+      },
+      {
+        "name": "plan-execution-audit",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/plan-execution-audit/SKILL.md",
+        "description_chars": 234,
+        "triggers_matched": [
+          "compare to the plan",
+          "does this match the plan",
+          "missing",
+          "superseded"
+        ],
+        "scoring": {
+          "trigger_accuracy": 5,
+          "clarity": 5,
+          "scope_fit": 5,
+          "frontmatter_compliance": 5,
+          "operational_completeness": 5,
+          "overall": 5.0
+        },
+        "improvements": []
+      },
+      {
+        "name": "validation-pairing",
+        "skill_md": "/Users/nick/Desktop/orbit/skills/validation-pairing/SKILL.md",
+        "description_chars": 224,
+        "triggers_matched": [
+          "did it actually do it",
+          "validate the claims",
+          "prove it was completed",
+          "check against the repo"
+        ],
+        "scoring": {
+          "trigger_accuracy": 5,
+          "clarity": 5,
+          "scope_fit": 5,
+          "frontmatter_compliance": 5,
+          "operational_completeness": 5,
+          "overall": 5.0
+        },
+        "improvements": []
+      }
+    ]
+  }
+}

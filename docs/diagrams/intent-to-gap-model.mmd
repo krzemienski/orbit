@@ -1,0 +1,14 @@
+flowchart TD
+  I[intent] -->|matched plan| OK[validated]
+  I -->|no plan match| INP[gap: intent-not-planned]
+  I -->|plan match no claim| INI[gap: intent-not-implemented]
+  CLM[assistant claim] -->|tool + repo evidence| OK
+  CLM -->|no evidence| CNV[gap: claim-not-validated]
+  CLM -->|evidence contradicts| CCT[gap: claim-contradicted]
+  PL[plan item] -->|superseded by later instruction| SUP[gap: superseded-plan-item]
+  PL -->|never referenced again| STL[gap: plan-stale]
+  PL -->|absent for known intent| OMI[gap: plan-omission]
+  TS[session-only decision] --> SOD[gap: session-only-decision]
+  ART[expected artifact missing] --> MA[gap: missing-artifact]
+  VAL[validation absent] --> MV[gap: missing-validation]
+  AMB[ambiguous evidence] --> AE[gap: ambiguous-evidence]

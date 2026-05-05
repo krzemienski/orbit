@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit · Reports</title><style>
+:root { --black:#0A0A0B; --carbon:#0F1012; --slate:#171920; --panel:#232734;
+        --light:#C7CDD8; --white:#F4F7FB;
+        --lime:#C6FF00; --orange:#FF8A00; --red:#FF4D36; --purple:#8B3DFF; --blue:#1E6BFF; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--black); color:var(--white);
+       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+       line-height:1.55; }
+header.brand { padding:24px 28px; background:var(--carbon); border-bottom:1px solid #232734; }
+header.brand .logo { display:flex; align-items:center; gap:14px; letter-spacing:.18em; font-weight:900; font-size:24px; }
+header.brand .orb { width:24px; height:24px; border:2px solid var(--lime); border-radius:999px; position:relative; box-shadow:0 0 16px rgba(198,255,0,.28); }
+header.brand .orb:after { content:''; position:absolute; width:38px; height:11px; border:2px solid var(--purple); border-left:0; border-right:0; border-radius:999px; top:4px; left:-9px; transform:rotate(-24deg); }
+header.brand .tagline { color:var(--lime); margin-top:8px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+nav.docnav { padding:14px 28px; background:var(--slate); border-bottom:1px solid #232734;
+             font-size:13px; display:flex; flex-wrap:wrap; gap:10px 16px; }
+nav.docnav a { color:var(--light); text-decoration:none; }
+nav.docnav a:hover { color:var(--lime); }
+nav.docnav a.current { color:var(--lime); border-bottom:2px solid var(--orange); padding-bottom:2px; }
+main { max-width:1100px; margin:0 auto; padding:32px 28px 80px; }
+h1, h2, h3 { letter-spacing:-.01em; }
+h1 { color:var(--lime); border-bottom:1px solid #2a2f3a; padding-bottom:12px; }
+h2 { color:var(--orange); margin-top:32px; }
+h3 { color:var(--blue); margin-top:24px; }
+a { color:var(--lime); }
+code { color:var(--lime); background:var(--carbon); padding:1px 6px; border-radius:4px; font-size:.92em; }
+pre { background:var(--carbon); border:1px solid #232734; border-left:3px solid var(--purple);
+      padding:14px 16px; border-radius:8px; overflow:auto; }
+pre code { background:transparent; padding:0; color:var(--white); }
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border-bottom:1px solid #232734; padding:10px 14px; text-align:left; vertical-align:top; }
+th { color:var(--lime); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+blockquote { border-left:3px solid var(--orange); margin:14px 0; padding:8px 14px; background:var(--carbon); color:var(--light); }
+hr { border:0; border-top:1px solid #232734; margin:32px 0; }
+.brand-chip { display:inline-block; padding:2px 10px; border-radius:999px; margin-right:6px; font-size:11px; }
+.lime { background:var(--lime); color:#000; }
+.orange { background:var(--orange); color:#000; }
+.red { background:var(--red); color:#fff; }
+.purple { background:var(--purple); color:#fff; }
+.blue { background:var(--blue); color:#fff; }
+</style></head><body><header class="brand"><div class="logo"><div class="orb"></div>ORBIT</div><div class="tagline">Find drift. Close gaps. Restore alignment.</div></header><nav class="docnav"><a class="" href="index.html">Orbit Documentation</a><a class="" href="install.html">Install</a><a class="" href="usage.html">Usage</a><a class="" href="commands.html">Commands</a><a class="" href="hooks.html">Hooks</a><a class="" href="skills.html">Skills</a><a class="" href="evidence-model.html">Evidence Model</a><a class="" href="validation.html">Validation</a><a class="" href="sdk-harness.html">SDK Harness</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="dashboard.html">Dashboard</a><a class="current" href="reports.html">Reports</a><a class="" href="compliance.html">Compliance</a><a class="" href="plugin-validation.html">Plugin Validation</a><a class="" href="skill-creator-review.html">Skill Creator Review</a><a class="" href="troubleshooting.html">Troubleshooting</a><a class="" href="diagrams.html">Diagrams</a><a class="" href="validation-research.html">Validation Research</a><a class="" href="architecture.html">Architecture</a><a class="" href="installed-plugin-validation.html">Installed Plugin Validation</a></nav><main><p><span class="brand-chip lime">lime #C6FF00</span><span class="brand-chip orange">orange #FF8A00</span><span class="brand-chip red">red #FF4D36</span><span class="brand-chip purple">purple #8B3DFF</span><span class="brand-chip blue">blue #1E6BFF</span></p><h1>Reports</h1>
+<p><code>sdk_orbit_all.py</code> writes 13 reports under <code>.orbit-sdk-harness/reports/</code>:</p>
+<table>
+<thead><tr><th>Report</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><code>orbit-validation-summary.md</code></td><td>Executive summary with every section and final verdict</td></tr>
+<tr><td><code>orbit-validation-results.json</code></td><td>Machine-readable check-by-check results + payloads</td></tr>
+<tr><td><code>orbit-architecture-discovery.md</code></td><td>Local architecture map + per-check status</td></tr>
+<tr><td><code>orbit-plugin-compliance.md</code></td><td>Static validator roll-up</td></tr>
+<tr><td><code>orbit-installed-plugin-validation.md</code></td><td>Installed-plugin checks (with BLOCKED rows + manual commands)</td></tr>
+<tr><td><code>orbit-skill-compliance.md</code></td><td>Frontmatter validator detail</td></tr>
+<tr><td><code>orbit-command-compliance.md</code></td><td>Command markdown audit</td></tr>
+<tr><td><code>orbit-hook-compliance.md</code></td><td>Hooks.json + per-hook smoke detail</td></tr>
+<tr><td><code>orbit-docs-compliance.md</code></td><td>Markdown + HTML + diagram completeness</td></tr>
+<tr><td><code>orbit-skill-creator-review.md</code></td><td>Per-skill scoring under the Skill Creator rubric</td></tr>
+<tr><td><code>orbit-scenario-matrix.csv</code></td><td>One row per SDK scenario with status + evidence path</td></tr>
+<tr><td><code>orbit-dashboard-verification.md</code></td><td>Dashboard token-by-token verification</td></tr>
+<tr><td><code>orbit-final-pass-fail.md</code></td><td>Section-level PASS/FAIL/BLOCKED roll-up + overall</td></tr>
+</tbody></table>
+<h2>Reading the summary</h2>
+<p><code>orbit-validation-summary.md</code> always contains:</p>
+<ul>
+<li>Generated timestamp, plugin root, overall status.</li>
+<li>Section status table (8 sections).</li>
+<li>Architecture discovery reference.</li>
+<li>Documentation research source list.</li>
+<li>Per-section status with evidence paths.</li>
+<li>Test prompts used (per-run <code>prompt.md</code> references).</li>
+<li>Observed artifact list (<code>transcript.json</code>, <code>session-id.txt</code>, <code>jsonl-pointer.txt</code>, etc.).</li>
+<li>Known failures (from FAIL rows).</li>
+<li>Blocked checks with manual verification commands.</li>
+<li>Recommended fixes.</li>
+<li>Final pass/fail.</li>
+</ul>
+<h2>Evidence rules</h2>
+<p>Every PASS in every report cites a real evidence path. Every FAIL cites the same. Every BLOCKED cites the manual verification command needed to resolve the block. There are no rows without evidence references.</p></main></body></html>

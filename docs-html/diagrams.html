@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit · Diagrams</title><style>
+:root { --black:#0A0A0B; --carbon:#0F1012; --slate:#171920; --panel:#232734;
+        --light:#C7CDD8; --white:#F4F7FB;
+        --lime:#C6FF00; --orange:#FF8A00; --red:#FF4D36; --purple:#8B3DFF; --blue:#1E6BFF; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--black); color:var(--white);
+       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+       line-height:1.55; }
+header.brand { padding:24px 28px; background:var(--carbon); border-bottom:1px solid #232734; }
+header.brand .logo { display:flex; align-items:center; gap:14px; letter-spacing:.18em; font-weight:900; font-size:24px; }
+header.brand .orb { width:24px; height:24px; border:2px solid var(--lime); border-radius:999px; position:relative; box-shadow:0 0 16px rgba(198,255,0,.28); }
+header.brand .orb:after { content:''; position:absolute; width:38px; height:11px; border:2px solid var(--purple); border-left:0; border-right:0; border-radius:999px; top:4px; left:-9px; transform:rotate(-24deg); }
+header.brand .tagline { color:var(--lime); margin-top:8px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+nav.docnav { padding:14px 28px; background:var(--slate); border-bottom:1px solid #232734;
+             font-size:13px; display:flex; flex-wrap:wrap; gap:10px 16px; }
+nav.docnav a { color:var(--light); text-decoration:none; }
+nav.docnav a:hover { color:var(--lime); }
+nav.docnav a.current { color:var(--lime); border-bottom:2px solid var(--orange); padding-bottom:2px; }
+main { max-width:1100px; margin:0 auto; padding:32px 28px 80px; }
+h1, h2, h3 { letter-spacing:-.01em; }
+h1 { color:var(--lime); border-bottom:1px solid #2a2f3a; padding-bottom:12px; }
+h2 { color:var(--orange); margin-top:32px; }
+h3 { color:var(--blue); margin-top:24px; }
+a { color:var(--lime); }
+code { color:var(--lime); background:var(--carbon); padding:1px 6px; border-radius:4px; font-size:.92em; }
+pre { background:var(--carbon); border:1px solid #232734; border-left:3px solid var(--purple);
+      padding:14px 16px; border-radius:8px; overflow:auto; }
+pre code { background:transparent; padding:0; color:var(--white); }
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border-bottom:1px solid #232734; padding:10px 14px; text-align:left; vertical-align:top; }
+th { color:var(--lime); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+blockquote { border-left:3px solid var(--orange); margin:14px 0; padding:8px 14px; background:var(--carbon); color:var(--light); }
+hr { border:0; border-top:1px solid #232734; margin:32px 0; }
+.brand-chip { display:inline-block; padding:2px 10px; border-radius:999px; margin-right:6px; font-size:11px; }
+.lime { background:var(--lime); color:#000; }
+.orange { background:var(--orange); color:#000; }
+.red { background:var(--red); color:#fff; }
+.purple { background:var(--purple); color:#fff; }
+.blue { background:var(--blue); color:#fff; }
+</style></head><body><header class="brand"><div class="logo"><div class="orb"></div>ORBIT</div><div class="tagline">Find drift. Close gaps. Restore alignment.</div></header><nav class="docnav"><a class="" href="index.html">Orbit Documentation</a><a class="" href="install.html">Install</a><a class="" href="usage.html">Usage</a><a class="" href="commands.html">Commands</a><a class="" href="hooks.html">Hooks</a><a class="" href="skills.html">Skills</a><a class="" href="evidence-model.html">Evidence Model</a><a class="" href="validation.html">Validation</a><a class="" href="sdk-harness.html">SDK Harness</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="reports.html">Reports</a><a class="" href="compliance.html">Compliance</a><a class="" href="plugin-validation.html">Plugin Validation</a><a class="" href="skill-creator-review.html">Skill Creator Review</a><a class="" href="troubleshooting.html">Troubleshooting</a><a class="current" href="diagrams.html">Diagrams</a><a class="" href="validation-research.html">Validation Research</a><a class="" href="architecture.html">Architecture</a><a class="" href="installed-plugin-validation.html">Installed Plugin Validation</a></nav><main><p><span class="brand-chip lime">lime #C6FF00</span><span class="brand-chip orange">orange #FF8A00</span><span class="brand-chip red">red #FF4D36</span><span class="brand-chip purple">purple #8B3DFF</span><span class="brand-chip blue">blue #1E6BFF</span></p><h1>Diagrams</h1>
+<p>Mermaid sources live under <code>docs/diagrams/</code>. Each begins with a recognized Mermaid diagram type so any compliant viewer (GitHub, Mermaid Live, mermaid-cli) renders them without preprocessing.</p>
+<table>
+<thead><tr><th>File</th><th>Diagram type</th><th>Topic</th></tr></thead>
+<tbody>
+<tr><td><code>orbit-system-flow.mmd</code></td><td>flowchart</td><td>End-to-end Orbit pipeline from user question to outputs</td></tr>
+<tr><td><code>evidence-pipeline.mmd</code></td><td>flowchart</td><td>Normalization + ranking of evidence layers</td></tr>
+<tr><td><code>intent-to-gap-model.mmd</code></td><td>flowchart</td><td>Mapping every intent/claim/plan/evidence shape to gap categories</td></tr>
+<tr><td><code>sdk-harness-flow.mmd</code></td><td>flowchart</td><td>Master harness pipeline + scenarios + reports</td></tr>
+<tr><td><code>plugin-compliance-flow.mmd</code></td><td>flowchart</td><td>Static validators + aggregation</td></tr>
+<tr><td><code>review-window-flow.mmd</code></td><td>flowchart</td><td>Review window flag handling + scope echo</td></tr>
+<tr><td><code>hook-candidate-flow.mmd</code></td><td>flowchart</td><td>UserPromptSubmit hook decision flow</td></tr>
+<tr><td><code>claim-validation-flow.mmd</code></td><td>flowchart</td><td>Claim → tool evidence → repo path → gap</td></tr>
+<tr><td><code>dashboard-output-flow.mmd</code></td><td>flowchart</td><td>Dashboard sections rendered from evidence</td></tr>
+<tr><td><code>installed-plugin-validation-flow.mmd</code></td><td>flowchart</td><td>What can / cannot be checked non-interactively</td></tr>
+<tr><td><code>local-architecture-discovery-flow.mmd</code></td><td>flowchart</td><td><code>discover_layout</code> walk</td></tr>
+</tbody></table>
+<h2>Render</h2>
+<p>GitHub renders Mermaid in markdown automatically. To render to SVG:</p>
+<pre><code class="language-bash">npx @mermaid-js/mermaid-cli -i docs/diagrams/orbit-system-flow.mmd -o /tmp/orbit-system-flow.svg</code></pre>
+<h2>Validation</h2>
+<p><code>sdk_orbit_docs_compliance.py</code> and <code>sdk_orbit_all.py::docs_completeness()</code> confirm each <code>.mmd</code> file is non-empty AND begins with one of: <code>flowchart</code>, <code>graph</code>, <code>sequencediagram</code>, <code>statediagram</code>, <code>classdiagram</code>, <code>timeline</code>, <code>journey</code>, <code>gantt</code>, <code>erdiagram</code>, <code>pie</code>, <code>mindmap</code>. A missing or empty diagram is a <code>FAIL</code>.</p></main></body></html>

@@ -1,0 +1,1 @@
+Use Orbit to validate a claim that the orbit-audit CLI supports --from and --to. Check the actual parser at scripts/orbit_audit.py. State whether the claim is validated or contradicted, and which gap category Orbit emits if a contradiction is found. Respond in <=8 lines.

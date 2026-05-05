@@ -1,0 +1,21 @@
+flowchart TD
+  ROOT[plugin root candidate] --> EX{exists?}
+  EX -->|no| FAIL[FAIL: plugin root missing]
+  EX -->|yes| L[discover_layout]
+  L --> M[manifest .claude-plugin/plugin.json]
+  L --> S[skills/ subdir contents]
+  L --> C[commands/ markdown files]
+  L --> H[hooks/hooks.json]
+  L --> SC[scripts/ python helpers]
+  L --> B[bin/ wrapper scripts]
+  L --> R[README CHANGELOG PRD CLAUDE.md]
+  L --> T[tests/ + examples/]
+  M --> INV[layout dict]
+  S --> INV
+  C --> INV
+  H --> INV
+  SC --> INV
+  B --> INV
+  R --> INV
+  T --> INV
+  INV --> RPT[orbit-architecture-discovery.md]

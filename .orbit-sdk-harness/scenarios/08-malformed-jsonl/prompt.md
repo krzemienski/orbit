@@ -1,0 +1,1 @@
+Orbit must tolerate malformed JSONL lines without aborting the audit. Confirm that Orbit's JSONL reader logs and skips bad lines, continues processing the remainder, and still produces evidence.json. Respond in <=6 lines.

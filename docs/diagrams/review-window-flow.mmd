@@ -1,0 +1,15 @@
+flowchart TD
+  USR["/orbit:review-window"] --> ARG{arguments?}
+  ARG -->|none| DEF["--days 3 default"]
+  ARG -->|--days N| DAYS["compute_window: now-Ndays..now"]
+  ARG -->|--since YYYY-MM-DD| SINCE["compute_window: since..now"]
+  ARG -->|--from FROM --to TO| FROMTO["compute_window: from..to"]
+  DEF --> DISC[discover_sessions filter by mtime]
+  DAYS --> DISC
+  SINCE --> DISC
+  FROMTO --> DISC
+  DISC --> EV[evidence.json scope: days, since, from, to]
+  EV --> RPT[gap-analysis.md scope line]
+  EV --> DASH[dashboard.html scope chip]
+  ALIAS["/orbit:review-last-3-days"] --> DAYS3["--days 3 alias"]
+  DAYS3 --> DISC

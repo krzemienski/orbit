@@ -1,0 +1,12 @@
+flowchart LR
+  UI[user instruction] --> N[normalize]
+  PL[plan item] --> N
+  AC[assistant claim] --> N
+  TE[tool evidence] --> N
+  CB[codebase truth] --> N
+  N --> RANK[evidence ranking 1..12]
+  RANK --> EV[evidence.json schema_version=0.2]
+  EV --> GAP[gap-analyzer]
+  EV --> LED[intent-ledger]
+  GAP --> RPT[gap-analysis.md]
+  GAP --> DASH[dashboard.html]

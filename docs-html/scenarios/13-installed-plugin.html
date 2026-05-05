@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit Scenario · Installed Plugin Validation</title><style>body{margin:0;background:#0A0A0B;color:#F4F7FB;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;line-height:1.55;}
+header{padding:24px;background:#0F1012;border-bottom:1px solid #232734;}
+header .logo{display:flex;align-items:center;gap:12px;letter-spacing:.18em;font-weight:900;font-size:22px;}
+header .orb{width:22px;height:22px;border:2px solid #C6FF00;border-radius:999px;}
+header .tag{color:#C6FF00;margin-top:6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;}
+nav{padding:12px 24px;background:#171920;border-bottom:1px solid #232734;font-size:13px;}
+nav a{color:#C7CDD8;text-decoration:none;margin-right:14px;}
+nav a:hover{color:#C6FF00;}
+main{max-width:980px;margin:0 auto;padding:32px 24px 80px;}
+h1{color:#C6FF00;border-bottom:1px solid #2a2f3a;padding-bottom:10px;}
+h2{color:#FF8A00;margin-top:28px;}
+pre{background:#0F1012;border-left:3px solid #8B3DFF;padding:14px;border-radius:8px;overflow:auto;color:#F4F7FB;}
+code{color:#C6FF00;}
+.chips span{display:inline-block;padding:2px 10px;border-radius:999px;margin-right:6px;font-size:11px;}
+.lime{background:#C6FF00;color:#000;} .orange{background:#FF8A00;color:#000;} .red{background:#FF4D36;color:#fff;} .purple{background:#8B3DFF;color:#fff;} .blue{background:#1E6BFF;color:#fff;}</style></head><body><header><div class="logo"><div class="orb"></div>ORBIT SCENARIO</div><div class="tag">Find drift. Close gaps. Restore alignment.</div></header><nav><a href="../index.html">← All docs</a><a href="../scenarios.html">Scenarios index</a></nav><main><h1>Scenario 13 — Installed Plugin Validation</h1><p class="chips"><span class="lime">lime</span><span class="orange">orange</span><span class="red">red</span><span class="purple">purple</span><span class="blue">blue</span></p><h2>Purpose</h2><pre># Scenario 13 — Installed Plugin Validation
+
+Validate Orbit as a real installed Claude Code plugin where feasible. Check what can be queried non-interactively; mark BLOCKED checks with manual verification commands.
+</pre><h2>Prompt</h2><pre>Validate Orbit as a real installed Claude Code plugin where feasible. State which checks can be performed non-interactively (manifest path, ~/.claude/plugins payload), which are BLOCKED (slash command discovery, skill discovery), and what manual command the user should run for each blocked check. Respond in &lt;=10 lines.
+</pre><h2>Expected Observations</h2><pre># Expected Observations
+
+- `claude` CLI on PATH is detected.
+- `~/.claude/plugins/installed_plugins.json` is parsed if present.
+- Slash command and skill discovery are reported as BLOCKED with manual verification commands.
+</pre><h2>Success Criteria</h2><pre># Success Criteria
+
+- `ResultMessage` observed in transcript.
+- Report includes manual verification command for every BLOCKED row.
+</pre></main></body></html>

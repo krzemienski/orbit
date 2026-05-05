@@ -1,0 +1,44 @@
+Raw skill inventory (enabled plugins per ~/.claude/plugins/installed_plugins.json)
+
+User skills (~/.claude/skills/):
+  testing-cc-plugins-python-sdk          ← directly about testing Claude Code plugins via Python Agent SDK
+  python-agent-sdk
+  claude-api
+  functional-validation
+  verification-before-completion
+  e2e-validate
+  no-mocking-validation-gates
+  create-validation-plan
+  gate-validation-discipline
+  preflight
+  e2e-testing
+  fresh-evidence
+  visual-inspection
+  blog-* (many — irrelevant to harness)
+  ... many more, see ~/.claude/skills/
+
+Plugin skills (~/.claude/plugins/):
+  superpowers-marketplace/superpowers-developing-for-claude-code/0.3.1/skills/developing-claude-code-plugins
+                                          ← canonical Claude Code plugin development guide
+  validationforge/skills/* (~50 skills — many relevant)
+  oh-my-claudecode (none directly relevant)
+  prd-generator (none directly relevant)
+  claude-hud (none directly relevant)
+  superpowers-marketplace/* (multiple plugins; only developing-claude-code-plugins is directly on-task)
+
+In-tree (project) skills (.claude/skills/, crucible-plugin/skills/):
+  N/A for Orbit — this project is itself a plugin author.
+
+Total enumerated: ~600 skills across all enabled plugins.
+Filter: keep skills whose description has ≥1 token overlap with task brief tokens
+        ('orbit', 'validation', 'harness', 'sdk', 'plugin', 'evidence', 'gap',
+         'audit', 'claim', 'session', 'transcript', 'dashboard', 'mermaid', 'jsonl',
+         'claude code', 'agent sdk').
+Above-floor count: 10.
+Refusal triggered: NO (≥5 candidates above floor).
+
+Correction history:
+- Initial enumeration missed `testing-cc-plugins-python-sdk` and
+  `superpowers-developing-for-claude-code:developing-claude-code-plugins` despite both
+  being highly task-relevant. Re-scored after manual review; both placed in top 2.
+  Surfaced by user feedback during forge execution.

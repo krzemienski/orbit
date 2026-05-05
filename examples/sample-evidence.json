@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.2",
+  "generated_at": "2026-05-04T00:00:00Z",
+  "project": {"cwd": ".", "name": "sample"},
+  "scope": {"days": 3, "since": null, "from": null, "to": null, "query": "sample", "plans": []},
+  "sources": {"sessions": [], "plans": []},
+  "intents": [],
+  "plan_items": [],
+  "claims": [],
+  "tool_evidence": [],
+  "validations": [],
+  "gaps": [],
+  "conflicts": [],
+  "uncertainties": []
+}

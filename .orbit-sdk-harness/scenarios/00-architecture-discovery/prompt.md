@@ -1,0 +1,1 @@
+Explore the local Orbit codebase from an architectural standpoint. Identify the plugin root, manifest, skills, commands, hooks, scripts, bin wrappers, evidence pipeline, dashboard renderer, review-window implementation, and validation surfaces. Produce an evidence-backed architecture map before running functional validation. Respond in <=10 lines.

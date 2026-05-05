@@ -1,0 +1,1 @@
+Validate Orbit as a real installed Claude Code plugin where feasible. State which checks can be performed non-interactively (manifest path, ~/.claude/plugins payload), which are BLOCKED (slash command discovery, skill discovery), and what manual command the user should run for each blocked check. Respond in <=10 lines.

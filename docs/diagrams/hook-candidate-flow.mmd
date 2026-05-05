@@ -1,0 +1,11 @@
+flowchart TD
+  UPS[UserPromptSubmit] --> HID[scripts/hook_instruction_detector.py]
+  HID --> P[parse stdin JSON]
+  P --> M{matches PATTERNS?}
+  M -->|yes| W[append candidate record to .claude/audits/orbit-plugin-data/intent-ledger-candidates.jsonl]
+  M -->|no| Q[exit 0 quiet]
+  P --> A{audit-like phrase?}
+  A -->|yes| INJ[stdout JSON additionalContext priming]
+  A -->|no| Q
+  W --> Q
+  INJ --> Q

@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit Scenario · Documentation Completeness</title><style>body{margin:0;background:#0A0A0B;color:#F4F7FB;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;line-height:1.55;}
+header{padding:24px;background:#0F1012;border-bottom:1px solid #232734;}
+header .logo{display:flex;align-items:center;gap:12px;letter-spacing:.18em;font-weight:900;font-size:22px;}
+header .orb{width:22px;height:22px;border:2px solid #C6FF00;border-radius:999px;}
+header .tag{color:#C6FF00;margin-top:6px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;}
+nav{padding:12px 24px;background:#171920;border-bottom:1px solid #232734;font-size:13px;}
+nav a{color:#C7CDD8;text-decoration:none;margin-right:14px;}
+nav a:hover{color:#C6FF00;}
+main{max-width:980px;margin:0 auto;padding:32px 24px 80px;}
+h1{color:#C6FF00;border-bottom:1px solid #2a2f3a;padding-bottom:10px;}
+h2{color:#FF8A00;margin-top:28px;}
+pre{background:#0F1012;border-left:3px solid #8B3DFF;padding:14px;border-radius:8px;overflow:auto;color:#F4F7FB;}
+code{color:#C6FF00;}
+.chips span{display:inline-block;padding:2px 10px;border-radius:999px;margin-right:6px;font-size:11px;}
+.lime{background:#C6FF00;color:#000;} .orange{background:#FF8A00;color:#000;} .red{background:#FF4D36;color:#fff;} .purple{background:#8B3DFF;color:#fff;} .blue{background:#1E6BFF;color:#fff;}</style></head><body><header><div class="logo"><div class="orb"></div>ORBIT SCENARIO</div><div class="tag">Find drift. Close gaps. Restore alignment.</div></header><nav><a href="../index.html">← All docs</a><a href="../scenarios.html">Scenarios index</a></nav><main><h1>Scenario 12 — Documentation Completeness</h1><p class="chips"><span class="lime">lime</span><span class="orange">orange</span><span class="red">red</span><span class="purple">purple</span><span class="blue">blue</span></p><h2>Purpose</h2><pre># Scenario 12 — Documentation Completeness
+
+Verify Orbit ships every required markdown doc, every required HTML draft, and every required Mermaid diagram.
+</pre><h2>Prompt</h2><pre>Confirm that Orbit ships with markdown docs (install, usage, commands, hooks, skills, evidence-model, validation, sdk-harness, scenarios, dashboard, reports, compliance, plugin-validation, skill-creator-review, troubleshooting, diagrams, validation-research, architecture, installed-plugin-validation), HTML drafts of each, and Mermaid diagrams covering the system flow, evidence pipeline, intent-to-gap model, harness flow, compliance flow, review window, hook candidate, claim validation, dashboard output, installed-plugin validation, and local-architecture discovery. Respond in &lt;=8 lines.
+</pre><h2>Expected Observations</h2><pre># Expected Observations
+
+- All 20 markdown docs exist and are non-empty.
+- All 20 HTML drafts exist and are non-empty.
+- All 11 Mermaid diagrams begin with a recognized diagram type.
+</pre><h2>Success Criteria</h2><pre># Success Criteria
+
+- `ResultMessage` observed in transcript.
+- `docs-audit.json` reports `all_present=true`.
+</pre></main></body></html>

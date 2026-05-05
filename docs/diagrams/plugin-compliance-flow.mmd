@@ -1,0 +1,17 @@
+flowchart TD
+  PR[plugin root] --> M[validate_plugin_manifest.py]
+  PR --> S[validate_skill_frontmatter.py]
+  PR --> H[validate_hooks.py]
+  PR --> C[validate_commands.py]
+  PR --> O[validate_outputs.py]
+  M --> MR[manifest checks: name=orbit, paths exist]
+  S --> SR[per-skill: frontmatter, name regex, description, body]
+  H --> HR[hooks.json parse, command exists, executable, stdin smoke]
+  C --> CR[per-command: heading, fenced example, helper or skill mapping]
+  O --> OR[orbit-audit audit + build-ledger smoke + render-dashboard]
+  MR --> AGG[aggregate compliance status]
+  SR --> AGG
+  HR --> AGG
+  CR --> AGG
+  OR --> AGG
+  AGG --> RPT[orbit-plugin-compliance.md]

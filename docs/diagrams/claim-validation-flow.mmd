@@ -1,0 +1,11 @@
+flowchart TD
+  CL[assistant claim] --> EX[extract_claims]
+  EX --> EV[evidence.json claims]
+  EV --> VC[validate_codebase]
+  VC --> PR{paths in claim?}
+  PR -->|none| UNV[validation_status=unverified]
+  PR -->|exist on disk| VAL[validation_status=passed]
+  PR -->|missing on disk| FAIL[validation_status=failed]
+  UNV --> GAP[gap: claim-not-validated]
+  FAIL --> GAP2[gap: claim-contradicted severity=high]
+  VAL --> OK[no gap]

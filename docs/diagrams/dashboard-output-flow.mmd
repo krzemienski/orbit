@@ -1,0 +1,16 @@
+flowchart TD
+  EV[evidence.json] --> RD[render_dashboard]
+  RD --> HERO[hero: ORBIT logo + tagline + scope chip]
+  RD --> CARDS[summary cards: intents, plans, claims, gaps]
+  RD --> MTX[matrix: intent x plan x claim x tool x repo]
+  RD --> TL[intent timeline list]
+  RD --> CV[claim validation table colored by status]
+  RD --> GAPS[gap cards colored by severity]
+  RD --> UNC[uncertainty list]
+  HERO --> HTML[.claude/audits/latest/dashboard.html]
+  CARDS --> HTML
+  MTX --> HTML
+  TL --> HTML
+  CV --> HTML
+  GAPS --> HTML
+  UNC --> HTML

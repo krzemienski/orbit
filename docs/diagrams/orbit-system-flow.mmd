@@ -1,0 +1,24 @@
+flowchart TD
+  U[User asks audit question] --> S{Skill or slash command?}
+  S -->|skill| GS[gap-analysis]
+  S -->|slash| C[/orbit:audit-gaps/]
+  C --> O[bin/orbit-audit]
+  O --> P[scripts/orbit_audit.py]
+  GS --> P
+  P --> SD[Session Discovery]
+  P --> PE[Plan Extractor]
+  SD --> RJ[ordered JSONL reader]
+  RJ --> IE[Intent Extractor]
+  RJ --> CE[Claim Extractor]
+  RJ --> TE[Tool Evidence Extractor]
+  IE --> EJ[evidence.json]
+  CE --> EJ
+  TE --> EJ
+  PE --> EJ
+  EJ --> CV[Codebase Validator]
+  CV --> GA[Gap Analyzer]
+  GA --> RP[gap-analysis.md]
+  GA --> DH[dashboard.html]
+  GA --> MM[intent-gap-flow.mmd]
+  GA --> TL[intent-timeline.mmd]
+  GA --> CSV[plan-execution-matrix.csv]

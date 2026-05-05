@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orbit · Commands</title><style>
+:root { --black:#0A0A0B; --carbon:#0F1012; --slate:#171920; --panel:#232734;
+        --light:#C7CDD8; --white:#F4F7FB;
+        --lime:#C6FF00; --orange:#FF8A00; --red:#FF4D36; --purple:#8B3DFF; --blue:#1E6BFF; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--black); color:var(--white);
+       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+       line-height:1.55; }
+header.brand { padding:24px 28px; background:var(--carbon); border-bottom:1px solid #232734; }
+header.brand .logo { display:flex; align-items:center; gap:14px; letter-spacing:.18em; font-weight:900; font-size:24px; }
+header.brand .orb { width:24px; height:24px; border:2px solid var(--lime); border-radius:999px; position:relative; box-shadow:0 0 16px rgba(198,255,0,.28); }
+header.brand .orb:after { content:''; position:absolute; width:38px; height:11px; border:2px solid var(--purple); border-left:0; border-right:0; border-radius:999px; top:4px; left:-9px; transform:rotate(-24deg); }
+header.brand .tagline { color:var(--lime); margin-top:8px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
+nav.docnav { padding:14px 28px; background:var(--slate); border-bottom:1px solid #232734;
+             font-size:13px; display:flex; flex-wrap:wrap; gap:10px 16px; }
+nav.docnav a { color:var(--light); text-decoration:none; }
+nav.docnav a:hover { color:var(--lime); }
+nav.docnav a.current { color:var(--lime); border-bottom:2px solid var(--orange); padding-bottom:2px; }
+main { max-width:1100px; margin:0 auto; padding:32px 28px 80px; }
+h1, h2, h3 { letter-spacing:-.01em; }
+h1 { color:var(--lime); border-bottom:1px solid #2a2f3a; padding-bottom:12px; }
+h2 { color:var(--orange); margin-top:32px; }
+h3 { color:var(--blue); margin-top:24px; }
+a { color:var(--lime); }
+code { color:var(--lime); background:var(--carbon); padding:1px 6px; border-radius:4px; font-size:.92em; }
+pre { background:var(--carbon); border:1px solid #232734; border-left:3px solid var(--purple);
+      padding:14px 16px; border-radius:8px; overflow:auto; }
+pre code { background:transparent; padding:0; color:var(--white); }
+table { border-collapse:collapse; width:100%; margin:16px 0; }
+th, td { border-bottom:1px solid #232734; padding:10px 14px; text-align:left; vertical-align:top; }
+th { color:var(--lime); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+blockquote { border-left:3px solid var(--orange); margin:14px 0; padding:8px 14px; background:var(--carbon); color:var(--light); }
+hr { border:0; border-top:1px solid #232734; margin:32px 0; }
+.brand-chip { display:inline-block; padding:2px 10px; border-radius:999px; margin-right:6px; font-size:11px; }
+.lime { background:var(--lime); color:#000; }
+.orange { background:var(--orange); color:#000; }
+.red { background:var(--red); color:#fff; }
+.purple { background:var(--purple); color:#fff; }
+.blue { background:var(--blue); color:#fff; }
+</style></head><body><header class="brand"><div class="logo"><div class="orb"></div>ORBIT</div><div class="tagline">Find drift. Close gaps. Restore alignment.</div></header><nav class="docnav"><a class="" href="index.html">Orbit Documentation</a><a class="" href="install.html">Install</a><a class="" href="usage.html">Usage</a><a class="current" href="commands.html">Commands</a><a class="" href="hooks.html">Hooks</a><a class="" href="skills.html">Skills</a><a class="" href="evidence-model.html">Evidence Model</a><a class="" href="validation.html">Validation</a><a class="" href="sdk-harness.html">SDK Harness</a><a class="" href="scenarios.html">Scenarios</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="reports.html">Reports</a><a class="" href="compliance.html">Compliance</a><a class="" href="plugin-validation.html">Plugin Validation</a><a class="" href="skill-creator-review.html">Skill Creator Review</a><a class="" href="troubleshooting.html">Troubleshooting</a><a class="" href="diagrams.html">Diagrams</a><a class="" href="validation-research.html">Validation Research</a><a class="" href="architecture.html">Architecture</a><a class="" href="installed-plugin-validation.html">Installed Plugin Validation</a></nav><main><p><span class="brand-chip lime">lime #C6FF00</span><span class="brand-chip orange">orange #FF8A00</span><span class="brand-chip red">red #FF4D36</span><span class="brand-chip purple">purple #8B3DFF</span><span class="brand-chip blue">blue #1E6BFF</span></p><h1>Slash Commands</h1>
+<p>Orbit ships eight slash commands. Each one is a thin wrapper around <code>bin/orbit-audit</code> with a documented purpose and at least one usage example.</p>
+<table>
+<thead><tr><th>Command</th><th>CLI helper</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><code>/orbit:audit-gaps</code></td><td><code>orbit-audit audit ... --dashboard --validate-codebase</code></td><td>Full gap analysis with dashboard</td></tr>
+<tr><td><code>/orbit:mine-intent</code></td><td><code>orbit-audit build-ledger ... --days 30</code></td><td>Append durable instructions to the ledger</td></tr>
+<tr><td><code>/orbit:validate-claims</code></td><td><code>orbit-audit validate-claims --evidence ...</code></td><td>Re-validate existing evidence</td></tr>
+<tr><td><code>/orbit:render-dashboard</code></td><td><code>orbit-audit render-dashboard --evidence ...</code></td><td>Re-render <code>dashboard.html</code></td></tr>
+<tr><td><code>/orbit:compare-plan</code></td><td><code>orbit-audit compare-plan --plan PLAN.md ...</code></td><td>Plan vs. sessions + repo state</td></tr>
+<tr><td><code>/orbit:review-window</code></td><td><code>orbit-audit audit --days/--since/--from/--to ...</code></td><td>Configurable lookback window</td></tr>
+<tr><td><code>/orbit:review-last-3-days</code></td><td><code>orbit-audit audit --days 3 ...</code></td><td>Legacy alias for <code>--days 3</code></td></tr>
+<tr><td><code>/orbit:rebuild-ledger</code></td><td><code>orbit-audit build-ledger --replace --all</code></td><td>Replace ledger by re-mining sessions</td></tr>
+</tbody></table>
+<h2>Review window flag matrix</h2>
+<table>
+<thead><tr><th>Flag</th><th>Effect</th></tr></thead>
+<tbody>
+<tr><td>_no flag_</td><td>Default <code>--days 3</code></td></tr>
+<tr><td><code>--days N</code></td><td>Last N days (mtime filter)</td></tr>
+<tr><td><code>--since YYYY-MM-DD</code></td><td>From a specific date through now</td></tr>
+<tr><td><code>--from YYYY-MM-DD --to YYYY-MM-DD</code></td><td>Explicit closed window</td></tr>
+</tbody></table>
+<p><code>--from</code> and <code>--to</code> are also accepted as <code>--start</code>/<code>--end</code> shadow attrs in the parser (see <code>scripts/orbit_audit.py</code> lines 616-617).</p>
+<h2>Compliance</h2>
+<p>Every command is verified by <code>validate_commands.py</code>:</p>
+<ul>
+<li>markdown body non-empty</li>
+<li>markdown leading heading</li>
+<li>at least one fenced example block</li>
+<li>helper or skill mapping (<code>orbit-audit</code> or <code>skill</code> mentioned)</li>
+<li><code>review-window</code> documents <code>--days</code>, <code>--since</code>, <code>--from</code>, <code>--to</code></li>
+<li><code>review-last-3-days</code> documents itself as alias for <code>--days 3</code></li>
+</ul></main></body></html>

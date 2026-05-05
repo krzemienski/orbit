@@ -1,0 +1,1 @@
+List Orbit's required packaging surfaces (.claude-plugin/plugin.json, skills/, commands/, hooks/hooks.json, scripts/, bin/, README.md, CHANGELOG.md, PRD.md), and confirm that Orbit ships WITHOUT a Dockerfile, docker-compose, or Python package layout. Respond in <=8 lines.
